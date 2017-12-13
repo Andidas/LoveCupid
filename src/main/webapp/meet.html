@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>遇见</title>
+		<link rel="stylesheet" type="text/css" href="css/navfoot.css" />
+		<link rel="stylesheet" href="css/meet.css" />
+		<script type="text/javascript" src="js/loader.js"></script>
+		<style type="text/css">
+			
+		</style>
+		<script type="text/javascript">
+			$(function() {
+				$(".dislike-trigger").hover(function() {
+						$(this).find("p").animate({
+							opacity: '1',
+							bottom: '-25px'
+						})
+					},
+					function() {
+						$(this).find("p").animate({
+							opacity: '0',
+							bottom: '-15px'
+						})
+					});
+				$(".like-trigger").hover(function() {
+						$(this).find("p").animate({
+							opacity: '1',
+							bottom: '-25px'
+						})
+					},
+					function() {
+						$(this).find("p").animate({
+							opacity: '0',
+							bottom: '-15px'
+						})
+					});
+			});
+		</script>
+	</head>
+
+	<body id="mybody">
+		<div class="row clearfix">
+			<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="mynav">
+				<div class="container">
+					<div class="navbar-header" id="ml">
+						<a class="navbar-brand" href="#"></a>
+					</div>
+					<ul class="nav navbar-nav navbar-left" id="leftul">
+						<li class=""><a href="#">推荐</a></li>
+						<li class=""><a href="#">动态</a></li>
+						<li class="on"><a href="meet.html">遇见</a></li>
+						<li class=""><a href="#">寻人启事</a></li>
+						<li class=""><a href="personal.html">个人主页</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right" id="mr">
+						<li id="myli1">
+							<a>
+								<em class="glyphicon glyphicon-envelope" id="icon-color"></em>
+								<!--<em class="glyphicon glyphicon-chevron-down" id="thisdown fl"></em>-->
+							</a>
+						</li>
+						<li id="myli2"><a><em class="glyphicon glyphicon-user" id="icon-color"></em></a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="container" id="p1">
+			<div class="row clearfix" id="col-center">
+				<div class="col-md-10 column">
+					<div class="panel panel-default" id="searchFilter">
+						<div class="panel-body">
+							<div class="search-filter-tips text-gray">有标签用户才会被搜到！
+								<a class="link-lightBlue" data-log="profileInfo" target="_blank" href="/14472336?tab=info#edit=2_3_4">完善资料</a> 或 
+								<a class="link-lightBlue" data-log="profileQa" target="_blank" href="/14472336?tab=qa#qaAnchor">回答QA</a> 可获得标签</div>
+							<p class="text-dark-gray">选一个TA符合的标签</p>
+							<div class="js-tagbox search-filter-tagBox search-filter-tagBox-fold">
+								<div class="search-filter-tagBox-tip js-tag-tip n-switch-actived">
+									<a class="search-filter-vipBox-tip-fold fold-trigger" href="javascript:;">
+										<em class="icon-shrink-lightgray n-switch-one"></em>
+										<em class="icon-expand-lightgray n-switch-two"></em>
+									</a> 
+									更多标签
+								</div>
+								<dl class="search-filter-taglist clearfix">
+									<dt class="text-gray">热门推荐：</dt>
+									<dd>
+										<div class="search-filter-tag"><a class="tag-trigger tag-limeGreen" href="javascript:;">传统</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softOrange" href="javascript:;">成熟</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softCyan" href="javascript:;">内心强大</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softRed" href="javascript:;">吃货</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softPink" href="javascript:;">颜控</a></div>
+									</dd>
+								</dl>
+								<dl class="search-filter-taglist clearfix">
+									<dt class="text-gray">兴趣爱好：</dt>
+									<dd>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softPink" href="javascript:;">五月天</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-desaturatedBlue" href="javascript:;">美剧迷</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softOrange" href="javascript:;">象棋</a></div>
+									</dd>
+								</dl>
+								<dl class="search-filter-taglist clearfix">
+									<dt class="text-gray">性格特点：</dt>
+									<dd>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softOrange" href="javascript:;">爱干净</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softPurple" href="javascript:;">爱情至上</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softCyan" href="javascript:;">好奇心强</a></div>
+									</dd>
+								</dl>
+								<dl class="search-filter-taglist clearfix">
+									<dt class="text-gray">其他标签：</dt>
+									<dd>
+										<div class="search-filter-tag"><a class="tag-trigger tag-yellowGreen" href="javascript:;">环保</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-moderateCyan" href="javascript:;">无神论者</a></div>
+										<div class="search-filter-tag"><a class="tag-trigger tag-softCyan" href="javascript:;">丁克</a></div>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="p2">
+			<div class="row clearfix" id="col-center">
+				<div class="col-md-10 column">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="search-flow-hd">
+								<div class="js-next search-flow-next" data-log="male" style="display: block;">下一张 &gt;</div>
+							</div>
+							<div class="search-flow-wrapper">
+								<div class="js-empty"></div>
+								<div class="js-flowList search-flow">
+									<div class="js-item search-user search-user-3">
+										<div class="js-itemInner search-user-alpha">
+											<div class="search-user-costar js-costar">
+												<img src="https://lovepicture.nosdn.127.net/7215114564596522290?imageView&amp;quality=85&amp;thumbnail=410y410">
+											</div>
+											<div class="search-user-starring js-starring">
+												<a class="need-login js-user-link" data-log="avatar" target="_blank" href="/34878486">
+													<img src="https://lovepicture.nosdn.127.net/7215114564596522290?imageView&amp;quality=85&amp;thumbnail=410y410">
+												</a>
+												<div class="search-user-detail">
+													<a class="search-user-info need-login js-user-link" data-log="avatar" href="/34878486" target="_blank">
+														<div class="search-user-title js-search-user-title">
+															<span class="js-username username " title="欣文祁">欣文祁</span>
+															<span class="user-detail">23岁&nbsp;漳州&nbsp;166cm&nbsp;本科&nbsp;20000-50000元</span>
+														</div>
+														<ul class="search-user-tagList clearfix">
+															<li>高收入</li>
+															<li>年轻有为</li>
+														</ul>
+													</a>
+													<div class="search-user-operate">
+														<div class="search-user-operateItem search-user-dislike js-dislike">
+															<a href="javascript:;" class="dislike-trigger n-switch-one">
+																<em class="icon-shield-b"></em>
+																<p>没感觉</p>
+															</a>
+															<!--<em class="icon-shieldDone-b n-switch-two-dib"></em>-->
+														</div>
+														<div class="search-user-line"></div>
+														<div class="search-user-operateItem search-user-like js-like">
+															<a href="javascript:;" class="like-trigger n-switch-one need-login">
+																<em class="icon-like-b"></em>
+																<p>喜欢</p>
+															</a>
+															<!--<em class="icon-likeDone-b n-switch-two-dib"></em>-->
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="js-item search-user search-user-4">
+										<div class="js-itemInner search-user-alpha">
+											<div class="search-user-costar js-costar">
+												<img src="https://imgsize.ph.126.net/?enlarge=true&amp;imgurl=http://img1.ph.126.net/qD7s7Gx8q7SRTcdEtgimjw==/6619153457700020332.jpg_410x410x1x85.jpg">
+											</div>
+											<div class="search-user-starring js-starring">
+												<a class="need-login js-user-link" data-log="avatar" target="_blank" href="/6886860">
+													<img src="https://imgsize.ph.126.net/?enlarge=true&amp;imgurl=http://img1.ph.126.net/qD7s7Gx8q7SRTcdEtgimjw==/6619153457700020332.jpg_410x410x1x85.jpg"></a>
+												<div class="search-user-detail">
+													<a class="search-user-info need-login js-user-link" data-log="avatar" href="/6886860" target="_blank">
+														<div class="search-user-title js-search-user-title">
+															<span class="js-username username " title="苏苏">苏苏</span>
+															<span class="user-detail">22岁&nbsp;漳州&nbsp;165cm&nbsp;大专&nbsp;2000-4000元</span>
+														</div>
+														<ul class="search-user-tagList clearfix">
+															<li>环保</li>
+															<li>善良</li>
+															<li>传统</li>
+															<li>爱情至上</li>
+															<li>苗条</li>
+														</ul>
+													</a>
+													<div class="search-user-operate">
+														<div class="search-user-operateItem search-user-dislike js-dislike">
+															<a href="javascript:;" class="dislike-trigger n-switch-one">
+																<em class="icon-shield-b"></em>
+																<p>没感觉</p>
+															</a>
+															<em class="icon-shieldDone-b n-switch-two-dib"></em>
+														</div>
+														<div class="search-user-line"></div>
+														<div class="search-user-operateItem search-user-like js-like">
+															<a href="javascript:;" class="like-trigger n-switch-one need-login">
+																<em class="icon-like-b"></em>
+																<p>喜欢</p>
+															</a>
+															<em class="icon-likeDone-b n-switch-two-dib"></em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="js-item search-user search-user-5">
+										<div class="js-itemInner search-user-alpha">
+											<div class="search-user-costar js-costar">
+												<img src="https://lovepicture.nosdn.127.net/-4866216979771284592?imageView&amp;quality=85&amp;thumbnail=410y410">
+											</div>
+											<div class="search-user-starring js-starring">
+												<a class="need-login js-user-link" data-log="avatar" target="_blank" href="/52227335">
+													<img src="https://lovepicture.nosdn.127.net/-4866216979771284592?imageView&amp;quality=85&amp;thumbnail=410y410"></a>
+												<div class="search-user-detail">
+													<a class="search-user-info need-login js-user-link" data-log="avatar" href="/52227335" target="_blank">
+														<div class="search-user-title js-search-user-title">
+															<span class="js-username username " title="Aquerius小舒">Aquerius小舒</span>
+															<span class="user-detail">22岁&nbsp;漳州&nbsp;160cm&nbsp;本科&nbsp;6000-10000元</span>
+														</div>
+													</a>
+													<div class="search-user-operate">
+														<div class="search-user-operateItem search-user-dislike js-dislike">
+															<a href="javascript:;" class="dislike-trigger n-switch-one">
+																<em class="icon-shield-b"></em>
+																<p>没感觉</p>
+															</a>
+															<em class="icon-shieldDone-b n-switch-two-dib"></em>
+														</div>
+														<div class="search-user-line"></div>
+														<div class="search-user-operateItem search-user-like js-like">
+															<a href="javascript:;" class="like-trigger n-switch-one need-login">
+																<em class="icon-like-b"></em>
+																<p>喜欢</p>
+															</a>
+															<em class="icon-likeDone-b n-switch-two-dib"></em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="js-item search-user search-user-6">
+										<div class="js-itemInner search-user-alpha">
+											<div class="search-user-costar js-costar">
+												<img src="https://lovepicture.nosdn.127.net/-3394137171960409089?imageView&amp;quality=85&amp;thumbnail=410y410">
+											</div>
+											<div class="search-user-starring js-starring">
+												<a class="need-login js-user-link" data-log="avatar" target="_blank" href="/251026877">
+													<img src="https://lovepicture.nosdn.127.net/-3394137171960409089?imageView&amp;quality=85&amp;thumbnail=410y410"></a>
+												<div class="search-user-detail">
+													<a class="search-user-info need-login js-user-link" data-log="avatar" href="/251026877" target="_blank">
+														<div class="search-user-title js-search-user-title">
+															<span class="js-username username " title="李筱靖">李筱靖</span>
+															<span class="user-detail">20岁&nbsp;漳州&nbsp;164cm&nbsp;大专以下&nbsp;2000元以下</span>
+														</div>
+														<ul class="search-user-tagList clearfix">
+															<li>无神论者</li>
+															<li>学生</li>
+															<li>孝顺</li>
+															<li>爱干净</li>
+															<li>颜控</li>
+														</ul>
+													</a>
+													<div class="search-user-operate">
+														<div class="search-user-operateItem search-user-dislike js-dislike">
+															<a href="javascript:;" class="dislike-trigger n-switch-one">
+																<em class="icon-shield-b"></em>
+																<p>没感觉</p>
+															</a>
+															<em class="icon-shieldDone-b n-switch-two-dib"></em>
+														</div>
+														<div class="search-user-line"></div>
+														<div class="search-user-operateItem search-user-like js-like">
+															<a href="javascript:;" class="like-trigger n-switch-one need-login">
+																<em class="icon-like-b"></em>
+																<p>喜欢</p>
+															</a>
+															<em class="icon-likeDone-b n-switch-two-dib"></em>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="foot">
+				<a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" target="_blank">招聘信息</a> - <a href="/protocol"
+					target="_blank">使用条款</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">花田动态</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">友情链接</a> - <a href="http://sitemap.163.com/" target="_blank">网站地图</a> -
+				<a href="javascript:;" class=" need-login ">花田意见反馈</a> - 增值电信业务经营许可证：<a class="" target="_blank" href="https://tsm.miit.gov.cn/pages/home.aspx">浙B1.B2-20090185</a> <br> 网易公司版权所有
+				<br>
+				<span class="cRed">©1997-2017</span>
+			</div>
+		</footer>
+	</body>
+	<script src="js/navfoot.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".fold-trigger").click(function(){				
+				var reg=new RegExp("n-switch-actived");
+				var str = $(".js-tag-tip").attr("class");
+				if(reg.test(str)){
+					$(".js-tag-tip").removeClass("n-switch-actived");
+					$(".js-tagbox").removeClass("search-filter-tagBox-fold");
+					$(".icon-shrink-lightgray").css("display","block");
+					$(".icon-expand-lightgray").css("display","none");
+				}else{
+					$(".js-tag-tip").addClass("n-switch-actived");
+					$(".js-tagbox").addClass("search-filter-tagBox-fold");
+					$(".icon-shrink-lightgray").css("display","none");
+					$(".icon-expand-lightgray").css("display","block");
+				}
+			});
+		});
+	</script>
+</html>

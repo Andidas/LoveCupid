@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>画缘</title>
+		<script type="text/javascript" src="js/loader.js"></script>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/navfoot.css" />
+		<script type="text/javascript">
+			$(function() {
+				$(".form-control").bind("input propertychange", function() {
+					var id = $("input[type='text']").val();
+					var pwd = $("input[type='password']").val();
+					if ((pwd != null && pwd != "" && pwd != undefined) && (id != null && id != "" && id != undefined)) {
+						$("#dologin").removeClass("btndisabled");
+					} else {
+						$("#dologin").addClass("btndisabled");
+					}
+				});
+				$(".register-trigger").click(function() {
+					$(this).siblings().removeClass("current");
+					$(this).addClass("current");
+					$("#dologin").text("注 册");
+				});
+				$(".login-trigger").click(function() {
+					$(this).siblings().removeClass("current");
+					$(this).addClass("current");
+					$("#dologin").text("登 录");
+				});
+				$(".js-userItem").hover(function() {
+						$(this).find(".login-user-info").animate({
+							bottom: '-10px'
+						});
+						$(this).find(".login-user-mask").animate({
+							opacity: '0.5'
+						});
+					},
+					function() {
+						$(this).find(".login-user-info").animate({
+							bottom: '-75px'
+						});
+						$(this).find(".login-user-mask").animate({
+							opacity: '0'
+						});
+					});
+			});
+		</script>
+	</head>
+
+	<body>
+		<section class="login-section-login">
+			<div class="login-loginbox-wrapper">
+				<div class="login-logo"></div>
+				<div class="login-loginbox" id="loginBox">
+					<div class="login-loginbox-tabbar">
+						<ul class="login-loginbox-tab js-tab">
+							<li class="login-trigger current">登录</li>
+							<li class="register-trigger">注册</li>
+						</ul>
+					</div>
+					<div class="login-loginbox-content">
+						<div class="login-loginbox-login js-login">
+							<div class="login-wrap-form">
+								<div class="login-wrap-title">
+									<p class="form-notice">网易邮箱可以直接登录开通</p>
+								</div>
+								<div class="login-wrap-urs" style="width: 345px; height: 219px;">
+									<form action="" method="post">
+										<div class="input-group" id="index-width">
+											<span class="input-group-addon" id="index-bg-color"><em class="glyphicon glyphicon-user"></em></span>
+											<input type="text" class="form-control" placeholder="邮箱帐号/手机号" id="index-input-width" name="username">
+										</div>
+										<br />
+										<div class="input-group" id="index-width">
+											<span class="input-group-addon" id="index-bg-color"><em class="glyphicon glyphicon-lock"></em></span>
+											<input type="password" class="form-control" placeholder="6-16密码，区分大小写" id="index-input-width" name="password">
+										</div>
+										<br />
+										<div class="f-cb loginbox">
+											<a href="javascript:void(0);" id="dologin" data-action="dologin" class="u-loginbtn btncolor tabfocus btndisabled" tabindex="8">
+												登&nbsp;&nbsp;录</a>
+										</div>
+										<div class="m-unlogin" id="auto-id-1512989933173">
+											<div class="b-unlogn j-unlogn" id="auto-id-1512989933176">
+												<span class="u-checkbox tabfocus">
+													<input id="un-login" type="checkbox" name="un-login" class="un-login">
+											 	</span>
+												<label for="un-login" id="auto-id-1512989933175">记住密码</label>
+											</div>
+											<a class="forgetpwd j-redirect" data-outlink="1" href="//reg.163.com/resetpwd/index.do" target="_blank" id="auto-id-1512989933174">忘记密码？</a>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="login-wrap-other">
+								<div class="login-wrap-other-gap"><span>或</span></div>
+								<p class="form-notice">其他帐号登录：</p>
+								<ul class="login-wrap-other-list">
+									<li>
+										<a class="login-other-sina" title="使用新浪微博帐号登录" href="http://reg.163.com/outerLogin/oauth2/connect.do?target=3&amp;product=ht&amp;url=http%3A%2F%2Flove.163.com%2F%3FcheckUser%3D1%26vendor%3Dlove.pSearch&amp;url2=http%3A%2F%2Flove.163.com%2F%3FcheckUser%3D1%26vendor%3Dlove.pSearch"></a>
+									</li>
+									<li>
+										<a class="login-other-qq" title="使用QQ帐号登录" href="http://reg.163.com/outerLogin/oauth2/connect.do?target=1&amp;product=ht&amp;url=http%3A%2F%2Flove.163.com%2F%3FcheckUser%3D1%26vendor%3Dlove.pSearch&amp;url2=http%3A%2F%2Flove.163.com%2F%3FcheckUser%3D1%26vendor%3Dlove.pSearch"></a>
+									</li>
+									<li>
+										<a class="login-other-weixin" title="使用微信帐号登录" href="http://reg.163.com/outerLogin/oauth2/connect.do?target=13&amp;product=ht&amp;url=http%3A%2F%2Flove.163.com%2F%3FcheckUser%3D1%26vendor%3Dlove.pSearch&amp;url2=http%3A%2F%2Flove.163.com%2F%3FcheckUser%3D1%26vendor%3Dlove.pSearch"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="login-section-intro">
+			<div class="login-intro-wrapper">
+				<h2 class="login-intro-slogan">全国名企名校白领恋爱社区</h2>
+				<p class="login-intro-tips">已有 <span class="text-red">19,000,000</span> 位单身男女在花田注册</p>
+				<h3 class="login-title">花田是什么？</h3>
+				<p class="login-intro-text">网易花田是网易旗下的恋爱交友社区，在这里可以谈恋爱也可以交朋友。</p>
+				<p class="login-intro-text">注册花田需要身份认证，在这里交友特安全。也许你一个人生活也不错，说不定两个人一起更快活。</p>
+				<div id="introContent" class="login-intro-content animateing">
+					<div class="login-intro-content-mac"></div>
+					<div class="login-intro-content-phone"></div>
+				</div>
+			</div>
+		</section>
+		<section class="login-section-recommend">
+			<h2 class="login-title">不用寻找，推荐你喜欢的人给你 
+				<a target="_blank" href="/" class="need-login">查看我的推荐&gt;&gt;</a>
+			</h2>
+			<div class="login-recommend-userbox" id="sliderUserbox">
+				<div class="login-recommend-prev js-prev-navbar" style="display: none;">
+					<a href="javascript:;" class="prev-trigger"><em></em></a>
+					<i></i>
+				</div>
+				<div class="login-recommend-next js-next-navbar" style="display: block;">
+					<a href="javascript:;" class="next-trigger"><em></em></a>
+					<i></i>
+				</div>
+				<div class="login-recommend-listbox">
+					<div class="login-recommend-listbox-outter js-wrapper" style="margin-left: 0px;">
+						<div class="login-recommend-listbox-inner">
+							<ul class="login-recommend-list js-top-list clearfix">
+								<li>
+									<div class="login-user-item js-userItem">
+
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/14883736?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname">
+												<span title="秦大胖">秦大胖</span></p>
+											<p>29岁 170厘米</p>
+										</div>
+										<img src="https://lovepicture.nosdn.127.net/8053726300153375330?imageView&amp;thumbnail=180y180&amp;quality=85" style="opacity: 1;"></div>
+								</li>
+								<li>
+									<div class="login-user-item js-userItem">
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/46836584?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname"><span title="Bella">Bella</span></p>
+											<p>29岁 166厘米</p>
+										</div>
+										<img src="https://imgsize.ph.126.net/?imgurl=http://img2.ph.126.net/10yfTrunh2OfUmegfbsilg==/6608658619213391138.jpg_180x180x1x85.jpg" style="opacity: 1;"></div>
+								</li>
+								<li>
+									<div class="login-user-item js-userItem">
+
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/13145541?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname"><span title="竹子">竹子</span></p>
+											<p>26岁 164厘米</p>
+										</div>
+										<img src="https://lovepicture.nosdn.127.net/8021417863525629519?imageView&amp;thumbnail=180y180&amp;quality=85" style="opacity: 1;"></div>
+								</li>
+							</ul>
+							<ul class="login-recommend-list js-bottom-list clearfix">
+								<li>
+									<div class="login-user-item js-userItem">
+
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/54615533?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname"><span title="小西">小西</span></p>
+											<p>29岁 169厘米</p>
+										</div>
+										<img src="https://lovepicture.nosdn.127.net/-6122594572467179855?imageView&amp;thumbnail=180y180&amp;quality=85" style="opacity: 1;"></div>
+								</li>
+								<li>
+									<div class="login-user-item js-userItem">
+
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/616648?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname"><span title="小灰机">小灰机</span></p>
+											<p>28岁 160厘米</p>
+										</div>
+										<img src="https://lovepicture.nosdn.127.net/4228514730817032806?imageView&amp;thumbnail=180y180&amp;quality=85" style="opacity: 1;"></div>
+								</li>
+								<li>
+									<div class="login-user-item js-userItem">
+
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/252513840?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname"><span title="乐le">乐le</span></p>
+											<p>31岁 163厘米</p>
+										</div>
+										<img src="https://lovepicture.nosdn.127.net/3875860396175425668?imageView&amp;thumbnail=180y180&amp;quality=85" style="opacity: 1;"></div>
+								</li>
+								<li>
+									<div class="login-user-item js-userItem">
+
+										<i class="login-user-mask"></i>
+										<a class="login-user-target" href="/4057372?vendor=love.pSearch" target="_blank"></a>
+										<div class="login-user-info">
+											<p class="login-user-nickname"><span title="田琳宁">田琳宁</span></p>
+											<p>27岁 162厘米</p>
+										</div>
+										<img src="https://lovepicture.nosdn.127.net/-614252977220523242?imageView&amp;thumbnail=180y180&amp;quality=85" style="opacity: 1;"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="login-section-park">
+			<h2 class="login-title">有趣的应用和精彩的活动</h2>
+			<div class="login-park clearfix">
+				<div class="login-park-left">
+
+					<div class="login-park-xunren">
+						<ul id="xunrenList" class="login-park-xunren-list animateing">
+							<li class="login-xunren-middle">
+								<img src="//img3.cache.netease.com/love/image/page/login/park/xunren_01.jpg">
+								<h4>第274期</h4>
+								<p>生活中迷糊，工作中喜欢研究的萌系狮子女</p>
+							</li>
+							<li class="login-xunren-left">
+								<img src="//img3.cache.netease.com/love/image/page/login/park/xunren_02.jpg">
+							</li>
+							<li class="login-xunren-right">
+								<img src="//img3.cache.netease.com/love/image/page/login/park/xunren_03.jpg">
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="login-park-right">
+					<div class="login-park-item">
+						<h3>寻人启事</h3>
+						<p>优质单身男女的个人征友专题，有文有真相。</p>
+					</div>
+				</div>
+			</div>
+			<div class="login-park clearfix">
+				<div class="login-park-left">
+					<div class="login-park-letter">
+						<div id="parkLetter" class="login-letter-content animateing">
+							<div class="login-letter-bg1"></div>
+							<div class="login-letter-bg2"></div>
+							<div class="login-letter-icon"></div>
+							<div class="login-letter-line"></div>
+						</div>
+					</div>
+				</div>
+				<div class="login-park-right">
+					<div class="login-park-item">
+						<h3>桃花信</h3>
+						<p>在花田匿名聊天，寻找缘分！无聊的时候，跟陌生人匿名聊聊吧！</p>
+					</div>
+				</div>
+			</div>
+			<div class="login-park clearfix">
+				<div class="login-park-left">
+					<div class="login-park-item" style="margin-left: 55px;">
+						<h3>花田对</h3>
+						<p>花田官方线下活动。面对面，更容易搭讪！</p>
+					</div>
+				</div>
+				<div class="login-park-right">
+					<div id="parkParty" class="login-park-party animateing">
+						<em class="login-park-party-item login-park-party-00"></em>
+						<em class="login-park-party-item login-park-party-01 js-item"></em>
+						<em class="login-park-party-item login-park-party-02 js-item"></em>
+						<em class="login-park-party-item login-park-party-03 js-item"></em>
+						<em class="login-park-party-item login-park-party-04 js-item"></em>
+						<em class="login-park-party-item login-park-party-05 js-item"></em>
+						<em class="login-park-party-item login-park-party-06 js-item"></em>
+						<em class="login-park-party-item login-park-party-07 js-item"></em>
+						<em class="login-park-party-item login-park-party-08 js-item"></em>
+						<em class="login-park-party-item login-park-party-09 js-item"></em>
+						<em class="login-park-party-item login-park-party-10 js-item"></em>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="login-section-goodnews">
+			<h2 class="login-title">他们都在花田找到了对象</h2>
+			<a href="/wedding/recommend">
+				<div class="login-goodnews-userlist">
+					<ul id="goodnewsList" class="login-goodnews-list login-goodnews-animateEnd">
+						<li class="login-goodnews-order login-goodnews-order-1 js-step-one animateing">
+							<img src="//img2.cache.netease.com/love/image/page/login/lovers/lovers_19.png">
+							<p>上海会员 2015.08.21</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-2 js-step-one animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_02.png">
+							<p>杭州会员 2013.02.05</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-3 js-step-one animateing">
+							<img src="//img2.cache.netease.com/love/image/page/login/lovers/lovers_18.png">
+							<p>上海会员2014.06.01</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-4 js-step-one animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_21.png">
+							<p>杭州会员 2016.06.06</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-5 js-step-two animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_17.png">
+							<p>湖北会员 2015.08.01</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-6 js-step-two animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_20.png">
+							<p>湖北会员 2016.03.15</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-7 js-step-two animateing">
+							<img src="//img1.cache.netease.com/love/image/page/login/lovers/lovers_13.png">
+							<p class="fS12" style="margin-left: -9px;">上海会员 2013.02.23</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-8 js-step-third animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_16.png">
+							<p>北京会员 2014.02.05</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-9 js-step-third animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_15.png">
+							<p style="margin-left: -15px;">湖北会员 2014.06.05</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-10 js-step-third animateing">
+							<img src="//img3.cache.netease.com/love/image/page/login/lovers/lovers_14.png">
+							<p class="fS12" style="margin-left: -9px;">广东会员 2014.12.24</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-11 js-step-third animateing">
+							<img src="//img4.cache.netease.com/love/image/page/login/lovers/lovers_22.png">
+							<p class="fS12" style="margin-left: -9px;">北京会员2015.11.01</p>
+						</li>
+						<li class="login-goodnews-order login-goodnews-order-12 js-step-third animateing">
+							<img src="//img1.cache.netease.com/love/image/page/login/lovers/lovers_23.png">
+							<p class="fS12" style="margin-left: -9px;">北京会员 2016.05.02</p>
+						</li>
+					</ul>
+				</div>
+			</a>
+		</section>
+		<footer class="footer">
+			<div class="footer-login">
+				<p class="footer-login-slogan">上花田，轻松找对象</p>
+				<div class="footer-login-btnBox">
+					<a class="btnB btn-red register-trigger" href="javascript:;">注册花田</a>
+					<a class="btnB btn-blue login-trigger" href="javascript:;">登录花田</a>
+				</div>
+				<p class="footer-login-desc">关注花田：
+					<a class="icon-guide-weibo" href="//weibo.com/ihuatian" target="_blank"></a>
+					<a class="icon-guide-douban" href="//site.douban.com/188797/" target="_blank"></a>&nbsp;&nbsp;花田微信号：lovehuatian</p>
+				<p class="footer-login-subDesc">iPhone用户客服邮箱：ihuatianiphone@163.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Android用户客服邮箱：ihuatianandroid@163.com</p>
+			</div>
+			<div class="foot">
+				<a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" target="_blank">招聘信息</a> - <a href="/protocol"
+					target="_blank">使用条款</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">花田动态</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">友情链接</a> - <a href="http://sitemap.163.com/" target="_blank">网站地图</a> -
+				<a href="javascript:;" class=" need-login ">花田意见反馈</a> - 增值电信业务经营许可证：<a class="" target="_blank" href="https://tsm.miit.gov.cn/pages/home.aspx">浙B1.B2-20090185</a> <br> 网易公司版权所有
+				<br>
+				<span class="cRed">©1997-2017</span>
+			</div>
+		</footer>
+	</body>
+
+</html>

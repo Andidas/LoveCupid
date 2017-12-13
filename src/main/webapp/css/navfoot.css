@@ -1,0 +1,103 @@
+body{
+	background: #EDEFF5;
+}
+
+#mynav {
+	background: transparent url("../img/navibg.png") repeat-x left top;
+	width: 100%;
+	bottom: 0px;
+	height: 51px;
+}
+
+
+
+#icon-color {
+	color: gainsboro;
+	font-size: 15px;
+}
+
+#mr {
+	margin-right: 120px;
+}
+
+#ml {
+	margin-left: 120px;
+}
+
+#myli1,
+#myli2 {
+	width: 60px;
+	height: 50px;
+	cursor: pointer;
+}
+
+#thisdown {
+	color: gainsboro;
+	font-size: 12px;
+}
+
+#myli1:hover,
+#myli2:hover {
+	background: white;
+}
+
+.navbar-header a {
+	background: transparent url(../img/logo_v140801.png) no-repeat;
+	height: 38px;
+	width: 112px;
+}
+
+#leftul {
+	margin-left: 50px;
+}
+
+#leftul a {
+	text-decoration: none;
+	font-size: 16px;
+	color: white;
+}
+
+#leftul a:hover {
+	background: #333;
+}
+
+#fl {
+	float: left;
+}
+
+#fr {
+	float: right;
+}
+
+.header-app-btn-lineL {
+	margin: 21px 0 0;
+	float: left;
+}
+
+#myli1 {
+	border-left: 1px solid #424854;
+	border-right: 1px solid #898C92;
+}
+
+#leftul .on {
+	border-bottom: 2px solid red;
+}
+/*底部版权*/
+.footer {
+	background: #E3E6EE;
+	line-height: 21px;
+	margin-top: 26px;
+}
+.footer .foot {
+	color: #999;
+	padding: 16px 0;
+	text-align: center;
+}
+
+.footer .foot a {
+	color: #999;
+}
+
+.footer .cRed {
+	color: #BA2636;
+}

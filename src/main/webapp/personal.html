@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 兼容手机、平板的设置 ：width=device-width。视窗宽度=设备宽度，默认1倍大小显示-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>个人主页</title>
+		<script type="text/javascript" src="js/loader.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/userinfo.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" href="css/navfoot.css" />
+	</head>
+
+	<body class="profile" data-log="pMineProfile">
+		<div class=" profile-male">
+			<div class="row clearfix">
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="mynav">
+					<div class="container">
+						<div class="navbar-header" id="ml">
+							<a class="navbar-brand" href="#"></a>
+						</div>
+						<ul class="nav navbar-nav navbar-left" id="leftul">
+							<li class=""><a href="#">推荐</a></li>
+							<li class=""><a href="#">动态</a></li>
+							<li class=""><a href="meet.html">遇见</a></li>
+							<li class=""><a href="#">寻人启事</a></li>
+							<li class="on"><a href="personal.html">个人主页</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right" id="mr">
+							<li id="myli1">
+								<a>
+									<em class="glyphicon glyphicon-envelope" id="icon-color"></em>
+									<!--<em class="glyphicon glyphicon-chevron-down" id="thisdown fl"></em>-->
+								</a>
+							</li>
+							<li id="myli2"><a><em class="glyphicon glyphicon-user" id="icon-color"></em></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="content">
+				<div id="basicInfoBox" class="clearfix profile-basic profile-basic-edit" data-log="basicInfoBox">
+					<div class="profile-basic-avatar">
+						<div class="profile-basic-avatar-imgBox  profile-basic-avatar-mine">
+							<a href="#">
+								<img src="img/2.jpg" height="200px" width="200px">
+							</a>
+							<div class="profile-basic-avatar-update">
+								<i></i>
+								<a href="#">点击上传头像</a>
+							</div>
+						</div>
+						<div class="profile-basic-user-online" data-log="profileOnline">
+							<em class="icon-online" title="在线"></em><span class="text-dark-gray online-tips">在线</span>
+						</div>
+					</div>
+
+					<div id="profileBasicMain" class="profile-basic-main">
+						<div id="userStatusBar" class="profile-basic-verified">
+							<span class="profile-basic-firstPart">
+            <span id="profileVerifyName" class="profile-basic-name js-nickname ">没什么</span>
+							<span class="profile-basic-id">ID：4234113</span>
+						</div>
+						<div class="profile-basic-info">
+							<div class="profile-basic-info-left">
+								<span>男</span>
+								<span><em class="js-age">21</em>岁</span>
+								<span><em class="js-height">165</em>cm</span>
+								<span class="js-position">福建漳州</span>
+							</div>
+							<div id="integrityBox" class="profile-basic-integrity">
+								<span style="float:left;">
+      								资料完整度：<span class="js-totalPercent">22</span>%
+								</span>
+								&emsp;
+								<div class="addinfo glyphicon glyphicon-plus"></div>
+								<!--<ul class="profile-basic-integrity-view js-moduleIntroList">
+									<li class="js-item js-monologBox-intro modify-trigger" data-modulename="monologBox" title="立即完善">
+										<em class="icon-profile-integrity"></em>
+										<span class="profile-basic-integrity-text js-text" style="display: none; overflow: hidden;">完善内心独白，资料完整度+<span class="js-percent">10</span>%</span>
+									</li>
+									<li class="js-item js-loverDescBox-intro modify-trigger" data-modulename="loverDescBox" title="立即完善">
+										<em class="icon-profile-integrity"></em>
+										<span class="profile-basic-integrity-text js-text">完善交友要求，资料完整度+<span class="js-percent">5</span>%</span>
+									</li>
+
+									<li class="js-item js-uploadPicBox-intro modify-trigger" data-modulename="uploadPicBox" title="立即完善">
+										<em class="icon-profile-integrity"></em>
+										<span class="profile-basic-integrity-text js-text">上传<span class="js-count">5</span>张以上个人照，资料完整度+<span class="js-percent">10</span>%</span>
+									</li>
+									<li class="js-item js-QA-intro modify-trigger" data-modulename="QA" title="立即完善">
+										<em class="icon-profile-integrity"></em>
+										<span class="profile-basic-integrity-text js-text">完成<span class="js-count">20</span>道以上Q&amp;A，资料完整度+<span class="js-percent">40</span>%</span>
+									</li>
+								</ul>-->
+							</div>
+						</div>
+						<div class="profile-basic-tag clearfix js-tag" data-emptytagguide="1" data-newtagguide="1">
+							<ul class="profile-basic-tag-list js-tag-default" style="display: none;">
+							</ul>
+							<ul class="profile-basic-tag-list js-tag-list">
+								<li>户外</li>
+								<li>逻辑性强</li>
+								<li>好人缘</li>
+								<li>微博控</li>
+							</ul>
+							<span class="profile-basic-tag-desc js-tag-tips" style="display: none;"><span class="js-text">暂无标签</span>（<a class="underline update-qa-trigger" href="javascript:;">回答QA</a>、<a class="underline update-info-trigger" href="javascript:;">完善资料</a>获得更多标签）</span>
+							<a class="profile-basic-tag-edit icon-edit-s tag-trigger js-tag-edit" title="编辑标签" href="javascript:;"></a>
+						</div>
+						<div class="profile-basic-action">
+							<ul class="profile-basic-action-list clearfix">
+								<li>
+									<a class="icon-upload-profile-photo g-upload-photo-trigger" href="#" data-toggle="modal" data-target="#photomodal">
+										<em></em>
+										<p>发布动态</p>
+									</a>
+								</li>
+								<li>
+									<a class="icon-upload-profile-letter g-upload-letter-trigger" hidefocus="true" href="#">
+										<em></em>
+										<p>文字传情</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<span class="profile-basic-share">
+   <span class="shareKit js-share">
+      <span class="shareKit-desc">分享到</span>
+					<span class="shareKit-platform js-platform ">
+        <a class="weibo-trigger icon-share-sina-w" title="分享到微博"></a>
+        <a class="qzone-trigger icon-share-qzone-w" title="分享到QQ空间"></a>
+        <a class="renren-trigger icon-share-renren-w" title="分享到人人网"></a>
+        <a class="qq-trigger icon-share-qq-w" title="分享给QQ好友"></a>           
+       	<a class="weixin-trigger icon-share-wechat-w" title="分享到微信"></a>
+        <a class="yixin-trigger icon-share-yixin-w" title="分享到易信"></a>
+               </span>
+					</span>
+					</span>
+				</div>
+				<div class="profile-header">
+					<em class="profile-header-arrow"></em>
+					<div id="monologBox" class="profile-monolog" data-log="monologBox">
+						<div class="profile-monolog-preview js-preview">
+							<p class="profile-monolog-text">
+								<em class="icon-quote-up"></em> 向意中人介绍自己吧，比如特长、兴趣爱好、婚恋看法……
+								<em class="icon-quote-down"></em>
+							</p>
+							<a class="profile-monolog-edit-btn icon-edit js-editBtn" title="编辑" href="javascript:;">修改</a>
+						</div>
+						<div class="js-edit hidden">
+							<div class="profile-monolog-edit">
+								<div class="profile-monolog-edit-hd">
+									<h3>内心独白</h3>
+									<span class="profile-monolog-tips text-red">一天内只可修改一次</span>
+									<a class="profile-monolog-cancel-btn link-blue js-cancelEditBtn" href="javascript:;">取消编辑</a>
+								</div>
+								<div class="profile-monolog-edit-bd">
+									<div class="profile-monolog-textarea">
+										<textarea class="js-monolog"></textarea>
+									</div>
+								</div>
+								<div class="profile-monolog-edit-ft">
+									<div class="profile-monolog-edit-send n-send-ft">
+										<div class="publish-btn n-btn-box">
+											<div class="js-btn">
+												<a class="btn btn-red n-btn-sure submit-trigger" data-loadingtext="保存中..." href="javascript:;">保存</a>
+											</div>
+										</div>
+										<span class="publish-count js-wordCounter" style="display: block;">
+											<b class="char-constantia">163</b>个字
+										</span>
+										<span class="publish-count text-red js-tips" style="display: none;">
+											<em style="color: #FF0000">请输入10-163字</em>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="photoBox" class="profile-photo n-loginUser" data-log="profilePhotolayer">
+						<div class="clearfix">
+							<span class="profile-photo-num">形象照（<span class="js-photoNum">0</span>）</span>
+							<div class="profile-photo-page js-footer hidden">
+								<em class="icon-slider-prev-m s-prev prev-trigger disabled"></em><span class="s-pageNo js-pageNo">1</span>/<span class="s-pageTotal js-total">0</span><em class="icon-slider-next-m s-next next-trigger disabled"></em>
+							</div>
+						</div>
+						<div class="profile-photo-box">
+							<div class="profile-photo-upload profile-photo-upload-item-btn upload-trigger">
+								<p class="profile-photo-upload-item-add">+</p>
+								<p class="profile-photo-upload-item-tips">形象照</p>
+							</div>
+							<div class="profile-photo-list profile-photo-list-isLoginUser js-box" style="position: relative;">
+								<p class="profile-photo-upload-tips text-md js-origin ">快上传个人形象照展示自己吧！</p>
+								<ul class="profile-photo-upload-list clearfix js-picList ">
+									<div class="noresult-tips"><span class="noresult-tips-inner"><em class="noresult-tips-icon"></em><span class="js-text">列表无数据！</span></span>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<i id="qaAnchor" class="n-anchor"></i>
+
+				<div class="conL">
+
+					<div id="mainBox" data-show-type="timeline" class="mainBox ">
+						<div class="profile-tabBar">
+							<ul id="tabBar" class="tabBar">
+								<li class="profile-tab-trend active on">
+									<a href="#timelineWrapper" role="tab" data-toggle="tab">我的动态</a>
+								</li>
+								<li class="profile-tab-info">
+									<a href="#infoWrapper" role="tab" data-toggle="tab">我的资料</a>
+								</li>
+							</ul>
+						</div>
+						<div style="position: relative;" class="tab-content">
+							<div id="tabLoading" class="profile-loading" style="display: none;">
+								<img src="img/loading_info.gif">
+							</div>
+							<div id="timelineWrapper" class="profile-trend-wrapper tab-pane active" data-log="usertimeline">
+								<div id="userTimeline" class="profile-trendBox">
+									<div class="profile-trend-zindex"></div>
+									<ul class="profile-trendList js-itemList" data-log="feeds" data-userid="-6231795352026671374">
+										<li class="trend js-item profile-trend-new first" data-id="-9167504891933507132" data-date="20171211">
+											<a href="javascript:;" title="删除" class="profile-trend-close icon-close delete-trigger"></a>
+											<div class="profile-trend-time-wrapper"><em class="profile-time-arrowTop"></em>
+												<div class="profile-trend-time"><span class="profile-time-ym text-dark-gray">2017</span><span class="profile-time-d text-red">12</span></div><em class="profile-time-arrowBottom"></em></div>
+											<div class="trend-content">
+												<p class="js-trend-message trend-message text-mt"><a href="#" class="link-trend-tag">#测试#</a></p>
+												<div class="trend-media js-media">
+													<div class="trend-media-preview">
+														<div class="trend-preview-item js-media-item photo-trigger" data-profilephoto="0" data-photoid="4629537041433130827" data-realurl="https://lovepicture.nosdn.127.net/-5008530376330466737?imageView">
+															<img src="https://lovepicture.nosdn.127.net/-5008530376330466737?imageView&amp;quality=65&amp;thumbnail=127y127"></div>
+													</div>
+													<div class="trend-media-detail js-media-detail"></div>
+												</div>
+												<div class="trend-foot">
+													<div class="trend-time text-sd"><em class="icon-time"></em>15:16</div>
+													<div class="trend-operate text-md link-md">
+														<a class="btn-operate-item btn-operate-digg btn-operate-digg-enabled digg-trigger" title="赞一下" hidefocus="true" href="javascript:;">
+															<span>
+																<em class="icon-digg"></em>+0
+															</span>
+															<span>
+																<em class="icon-digg-disabled"></em>
+																<i class="js-count">+0</i>
+															</span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<ul class="profile-trend-expand js-trend-expend ">
+										<li class="profile-expand-constellation">
+											<div class="profile-trend-time-wrapper">
+												<em class="profile-time-arrowTop"></em>
+												<div class="profile-trend-time">
+													<span class="profile-time-ym text-dark-gray on-center">1996</span>
+													<span class="profile-time-d text-red">2</span>
+												</div>
+												<em class="profile-time-arrowBottom"></em>
+											</div>
+											<div class="profile-expand-content">
+												<span>
+                                                    <b>水瓶座</b>的我出生了
+                                                </span>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div id="infoWrapper" class="profile-info-wrapper tab-content">
+								<div id="loverDescBox" data-log="requirement" class="profile-mate">
+									<div class="profile-caption">
+										<h3>交友要求</h3>
+										<span class="profile-edit-btnBox">
+											<a title="编辑" class="js-editBtn" href="javascript:;">
+												<em class="icon-edit"></em>
+											</a>
+											<a class="profile-btn-cancel js-cancelEditBtn hidden" href="javascript:;">取消编辑</a>
+										</span>
+									</div>
+									<div class="profileList js-preview">
+										<p class="profile-mate-content"> 我希望你在
+											<strong class="js-view-city"> 福建 漳州</strong> ，年龄
+											<strong>18到21</strong>岁之间 。以上并不是硬性要求，快来和我联系吧。
+										</p>
+									</div>
+									<div class="js-edit hidden">
+										<div class="form-group profile-mate-group">
+											<div class="form-row js-row">
+												<label class="form-label">身高：</label>
+												<div class="form-control-select">
+													<select id="reqHeightStart" class="form-select js-reqHeightStart" name=""><option value="0">不限</option><option value="150">150厘米</option><option value="151">151厘米</option><option value="152">152厘米</option><option value="153">153厘米</option><option value="154">154厘米</option><option value="155">155厘米</option><option value="156">156厘米</option><option value="157">157厘米</option><option value="158">158厘米</option><option value="159">159厘米</option><option value="160" selected="">160厘米</option><option value="161">161厘米</option><option value="162">162厘米</option><option value="163">163厘米</option><option value="164">164厘米</option><option value="165">165厘米</option><option value="166">166厘米</option><option value="167">167厘米</option><option value="168">168厘米</option><option value="169">169厘米</option><option value="170">170厘米</option><option value="171">171厘米</option><option value="172">172厘米</option><option value="173">173厘米</option><option value="174">174厘米</option><option value="175">175厘米</option><option value="176">176厘米</option><option value="177">177厘米</option><option value="178">178厘米</option><option value="179">179厘米</option><option value="180">180厘米</option><option value="181">181厘米</option><option value="182">182厘米</option><option value="183">183厘米</option><option value="184">184厘米</option><option value="185">185厘米</option><option value="186">186厘米</option><option value="187">187厘米</option><option value="188">188厘米</option><option value="189">189厘米</option><option value="190">190厘米</option><option value="191">191厘米</option><option value="192">192厘米</option><option value="193">193厘米</option><option value="194">194厘米</option><option value="195">195厘米</option><option value="196">196厘米</option><option value="197">197厘米</option><option value="198">198厘米</option><option value="199">199厘米</option><option value="200">200厘米</option><option value="201">201厘米</option><option value="202">202厘米</option><option value="203">203厘米</option><option value="204">204厘米</option><option value="205">205厘米</option><option value="206">206厘米</option><option value="207">207厘米</option><option value="208">208厘米</option><option value="209">209厘米</option><option value="210">210厘米</option></select>
+													<span class="form-dash">到</span>
+													<select id="reqHeightEnd" class="form-select js-reqHeightEnd" name=""><option value="0">不限</option><option value="161">161厘米</option><option value="162">162厘米</option><option value="163">163厘米</option><option value="164">164厘米</option><option value="165">165厘米</option><option value="166">166厘米</option><option value="167">167厘米</option><option value="168">168厘米</option><option value="169">169厘米</option><option value="170" selected="">170厘米</option><option value="171">171厘米</option><option value="172">172厘米</option><option value="173">173厘米</option><option value="174">174厘米</option><option value="175">175厘米</option><option value="176">176厘米</option><option value="177">177厘米</option><option value="178">178厘米</option><option value="179">179厘米</option><option value="180">180厘米</option><option value="181">181厘米</option><option value="182">182厘米</option><option value="183">183厘米</option><option value="184">184厘米</option><option value="185">185厘米</option><option value="186">186厘米</option><option value="187">187厘米</option><option value="188">188厘米</option><option value="189">189厘米</option><option value="190">190厘米</option><option value="191">191厘米</option><option value="192">192厘米</option><option value="193">193厘米</option><option value="194">194厘米</option><option value="195">195厘米</option><option value="196">196厘米</option><option value="197">197厘米</option><option value="198">198厘米</option><option value="199">199厘米</option><option value="200">200厘米</option><option value="201">201厘米</option><option value="202">202厘米</option><option value="203">203厘米</option><option value="204">204厘米</option><option value="205">205厘米</option><option value="206">206厘米</option><option value="207">207厘米</option><option value="208">208厘米</option><option value="209">209厘米</option><option value="210">210厘米</option></select>
+												</div>
+												<div class="form-tips">
+													<span class="text-icon-tips js-tips hidden"></span>
+												</div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">年龄：</label>
+												<div class="form-control-select">
+													<select class="form-select js-reqAgeStart" name=""><option value="18">18岁</option><option value="19">19岁</option><option value="20" selected="">20岁</option><option value="21">21岁</option><option value="22">22岁</option><option value="23">23岁</option><option value="24">24岁</option><option value="25">25岁</option><option value="26">26岁</option><option value="27">27岁</option><option value="28">28岁</option><option value="29">29岁</option><option value="30">30岁</option><option value="31">31岁</option><option value="32">32岁</option><option value="33">33岁</option><option value="34">34岁</option><option value="35">35岁</option><option value="36">36岁</option><option value="37">37岁</option><option value="38">38岁</option><option value="39">39岁</option><option value="40">40岁</option><option value="41">41岁</option><option value="42">42岁</option><option value="43">43岁</option><option value="44">44岁</option><option value="45">45岁</option><option value="46">46岁</option><option value="47">47岁</option><option value="48">48岁</option><option value="49">49岁</option><option value="50">50岁</option><option value="51">51岁</option><option value="52">52岁</option><option value="53">53岁</option><option value="54">54岁</option><option value="55">55岁</option><option value="56">56岁</option><option value="57">57岁</option><option value="58">58岁</option><option value="59">59岁</option><option value="60">60岁</option></select>
+													<span class="form-dash">到</span>
+													<select class="form-select js-reqAgeEnd" name=""><option value="0">不限</option><option value="21">21岁</option><option value="22">22岁</option><option value="23">23岁</option><option value="24">24岁</option><option value="25" selected="">25岁</option><option value="26">26岁</option><option value="27">27岁</option><option value="28">28岁</option><option value="29">29岁</option><option value="30">30岁</option><option value="31">31岁</option><option value="32">32岁</option><option value="33">33岁</option><option value="34">34岁</option><option value="35">35岁</option><option value="36">36岁</option><option value="37">37岁</option><option value="38">38岁</option><option value="39">39岁</option><option value="40">40岁</option><option value="41">41岁</option><option value="42">42岁</option><option value="43">43岁</option><option value="44">44岁</option><option value="45">45岁</option><option value="46">46岁</option><option value="47">47岁</option><option value="48">48岁</option><option value="49">49岁</option><option value="50">50岁</option><option value="51">51岁</option><option value="52">52岁</option><option value="53">53岁</option><option value="54">54岁</option><option value="55">55岁</option><option value="56">56岁</option><option value="57">57岁</option><option value="58">58岁</option><option value="59">59岁</option><option value="60">60岁</option></select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row profile-mate-edu js-row">
+												<label class="form-label">学历：</label>
+												<div class="form-control-select">
+													<select id="reqEducation" class="form-select js-reqEducation" name="">
+														<option value="0">不限</option>
+														<option value="1">大专及以上</option>
+														<option value="2">本科及以上</option>
+														<option value="3">硕士及以上</option>
+														<option value="4">博士及以上</option>
+													</select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">月收入：</label>
+												<div class="form-control-select">
+													<select id="reqSalaryStart" class="form-select js-reqSalaryStart" name=""><option value="0">不限</option><option value="-1">2000元</option><option value="1">4000元</option><option value="2">6000元</option><option value="3">10000元</option><option value="4">20000元</option><option value="5">50000元</option></select>
+													<span class="form-dash">到</span>
+													<select id="reqSalaryEnd" class="form-select js-reqSalaryEnd" name=""><option value="0">不限</option><option value="-1">2000元</option><option value="1">4000元</option><option value="2">6000元</option><option value="3">10000元</option><option value="4">20000元</option><option value="5">50000元</option></select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">居住在：</label>
+												<div class="form-control-select">
+													<select id="reqProvince" class="form-select js-reqProvince" name=""><option value="0">不限</option><option value="1">北京</option><option value="2">上海</option><option value="3">天津</option><option value="4">重庆</option><option value="5">浙江</option><option value="6">江苏</option><option value="7">广东</option><option value="8" selected="">福建</option><option value="9">湖南</option><option value="10">湖北</option><option value="11">辽宁</option><option value="12">吉林</option><option value="13">黑龙江</option><option value="14">河北</option><option value="15">河南</option><option value="16">山东</option><option value="17">陕西</option><option value="18">甘肃</option><option value="19">青海</option><option value="20">新疆</option><option value="21">山西</option><option value="22">四川</option><option value="23">贵州</option><option value="24">安徽</option><option value="25">江西</option><option value="26">云南</option><option value="27">内蒙古</option><option value="28">广西</option><option value="29">西藏</option><option value="30">宁夏</option><option value="31">海南</option><option value="32">香港</option><option value="33">澳门</option><option value="34">台湾</option><option value="35">海外</option><option value="36">其他地区</option></select>
+													<span class="form-dash"></span>
+													<select id="reqCity" class="form-select js-reqCity" name=""><option value="0">不限</option><option value="1">福州</option><option value="2">厦门</option><option value="3">莆田</option><option value="4">三明</option><option value="5">泉州</option><option value="6" selected="">漳州</option><option value="7">南平</option><option value="8">龙岩</option><option value="9">宁德</option></select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-btn">
+												<label class="form-label">&nbsp;</label>
+												<div class="form-control-select">
+													<a class="btnM btn-red js-submitBtn" href="javascript:;">保存</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="summaryInfoBox" data-log="summaryInfoBox" class="profile-summary">
+									<div class="profile-caption">
+										<h3>基本资料</h3>
+										<div class=" profile-summary-tipsBox hidden js-helper"><em class="icon-help profile-summary-tips-trigger"></em>
+											<div class="profile-summary-tips animate js-desc-tips animate-scale-topLeft">
+												<a class="icon-close profile-summary-tips-close close-trigger" title="收起" href="javascript:;"></a><em class="icon-help"></em>性别可通过添加身份认证更正；或者发送修改项、身份证件、注册邮箱等资料至：huatian@service.netease.com </div>
+										</div>
+										<span class="profile-edit-btnBox">
+											<a title="编辑" class="js-editBtn" href="javascript:;">
+												<em class="icon-edit"></em>
+											</a>
+											<a class="profile-btn-cancel js-cancelEditBtn hidden" href="javascript:;">取消编辑</a>
+										</span>
+									</div>
+									<div class="js-preview ">
+										<ul class="profileList">
+											<li><span class="profile-label">昵称：</span>没什么 </li>
+											<li><span class="profile-label">婚姻状态：</span>未婚 </li>
+											<li><span class="profile-label">我在寻找：</span>恋人 </li>
+											<li><span class="profile-label">性别：</span>男 </li>
+											<li><span class="profile-label">年龄：</span>21岁 </li>
+											<li><span class="profile-label">身高：</span>165cm </li>
+											<li><span class="profile-label">体重：</span>-- </li>
+											<li><span class="profile-label">居住在：</span>福建漳州 </li>
+											<li><span class="profile-label">学历：</span>本科 </li>
+											<li><span class="profile-label">毕业院校：</span>-- </li>
+											<li><span class="profile-label">行业：</span>-- </li>
+											<li title=""><span class="profile-label">工作单位：</span>-- <a class="link-lightBlue profile-verified-goto" href="/verified/occupation">去认证</a></li>
+											<li><span class="profile-label">目前职位：</span>-- </li>
+											<li><span class="profile-label">月收入：</span>6000-10000元 </li>
+										</ul>
+									</div>
+									<div class="js-edit hidden">
+										<div class="form-group profile-summary-group">
+											<div class="form-row profile-summary-nickName js-row">
+												<label class="form-label"><span class="form-need">*</span>昵称：</label>
+												<div class="form-control-select">
+													<input type="text" class="form-input js-nickName" value="没什么 ">
+												</div>
+												<div class="form-tips">
+													<span class="text-icon-tips js-tips hidden"></span>
+												</div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">婚姻状态：</label>
+												<div class="form-control-select">
+													<select class="form-select js-marriageStatus">
+														<option value="1" selected="">未婚</option>
+														<option value="2">离异</option>
+														<option value="3">丧偶</option>
+														<option value="4">已婚</option>
+													</select>
+												</div>
+												<div class="form-tips">
+													<span class="text-icon-tips js-tips hidden"></span>
+												</div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">我在寻找：</label>
+												<div class="form-control-select">
+													<select class="form-select js-lookingFor">
+														<option value="1">结婚对象</option>
+														<option value="2" selected="">恋人</option>
+														<option value="3">普通朋友</option>
+														<option value="4">知己</option>
+													</select>
+												</div>
+												<div class="form-tips">
+													<span class="text-icon-tips js-tips hidden"></span>
+												</div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label"><span class="form-need">*</span>性别：</label>
+												<div class="form-control-select">
+													<select class="form-select form-disabled" disabled="disabled">
+														<option value="0">男</option>
+													</select>
+												</div>
+												<div class="form-tips">
+													<span class="text-icon-tips js-tips hidden"></span>
+												</div>
+											</div>
+											<div class="form-row profile-summary-birthday js-row">
+												<label class="form-label"><span class="form-need">*</span>生日：</label>
+												<div class="form-control-select form-select-wrapper">
+													<div class="form-control-cover js-birthday-forbid"></div>
+													<select class="form-select js-dateSelect js-year js-trigger form-disabled" data-thisyear="2017" disabled="">
+														<option value="2005">2005</option>
+													</select>
+													<select class="form-select js-dateSelect js-month js-trigger form-disabled" disabled="">
+														<option value="11">11</option>
+													</select>
+													<select class="form-select js-dateSelect js-day js-trigger form-disabled" disabled="">
+														<option value="11">11</option>
+													</select>
+												</div>
+												<div class="form-tips">
+													<span class="text-icon-tips js-tips hidden"></span>
+												</div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label"><span class="form-need">*</span>身高：</label>
+												<div class="form-control-select">
+													<select class="form-select js-height"><option value="150">150厘米</option><option value="151">151厘米</option><option value="152">152厘米</option><option value="153">153厘米</option><option value="154">154厘米</option><option value="155">155厘米</option><option value="156">156厘米</option><option value="157">157厘米</option><option value="158">158厘米</option><option value="159">159厘米</option><option value="160">160厘米</option><option value="161">161厘米</option><option value="162">162厘米</option><option value="163">163厘米</option><option value="164">164厘米</option><option value="165">165厘米</option><option value="166">166厘米</option><option value="167">167厘米</option><option value="168">168厘米</option><option value="169">169厘米</option><option value="170">170厘米</option><option value="171">171厘米</option><option value="172">172厘米</option><option value="173">173厘米</option><option value="174">174厘米</option><option value="175">175厘米</option><option value="176">176厘米</option><option value="177">177厘米</option><option value="178" selected="">178厘米</option><option value="179">179厘米</option><option value="180">180厘米</option><option value="181">181厘米</option><option value="182">182厘米</option><option value="183">183厘米</option><option value="184">184厘米</option><option value="185">185厘米</option><option value="186">186厘米</option><option value="187">187厘米</option><option value="188">188厘米</option><option value="189">189厘米</option><option value="190">190厘米</option><option value="191">191厘米</option><option value="192">192厘米</option><option value="193">193厘米</option><option value="194">194厘米</option><option value="195">195厘米</option><option value="196">196厘米</option><option value="197">197厘米</option><option value="198">198厘米</option><option value="199">199厘米</option><option value="200">200厘米</option><option value="201">201厘米</option><option value="202">202厘米</option><option value="203">203厘米</option><option value="204">204厘米</option><option value="205">205厘米</option><option value="206">206厘米</option><option value="207">207厘米</option><option value="208">208厘米</option><option value="209">209厘米</option><option value="210">210厘米</option></select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row profile-summary-weight js-row">
+												<label class="form-label">体重：</label>
+												<div class="form-control-select">
+													<input class="form-input js-weight" type="text" value="">
+													<span>公斤</span>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+
+											<div class="form-row profile-summary-living js-row">
+												<label class="form-label"><span class="form-need">*</span>居住在：</label>
+												<div class="form-control-select">
+													<select class="form-select js-province"><option value="1">北京</option><option value="2">上海</option><option value="3">天津</option><option value="4">重庆</option><option value="5">浙江</option><option value="6">江苏</option><option value="7">广东</option><option value="8" selected="">福建</option><option value="9">湖南</option><option value="10">湖北</option><option value="11">辽宁</option><option value="12">吉林</option><option value="13">黑龙江</option><option value="14">河北</option><option value="15">河南</option><option value="16">山东</option><option value="17">陕西</option><option value="18">甘肃</option><option value="19">青海</option><option value="20">新疆</option><option value="21">山西</option><option value="22">四川</option><option value="23">贵州</option><option value="24">安徽</option><option value="25">江西</option><option value="26">云南</option><option value="27">内蒙古</option><option value="28">广西</option><option value="29">西藏</option><option value="30">宁夏</option><option value="31">海南</option><option value="32">香港</option><option value="33">澳门</option><option value="34">台湾</option><option value="35">海外</option><option value="36">其他地区</option></select>
+													<select class="form-select js-city"><option value="1">福州</option><option value="2">厦门</option><option value="3">莆田</option><option value="4">三明</option><option value="5">泉州</option><option value="6" selected="">漳州</option><option value="7">南平</option><option value="8">龙岩</option><option value="9">宁德</option></select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label"><span class="form-need">*</span>学历：</label>
+												<div class="form-control-select form-select-wrapper">
+													<select class="form-select js-education">
+														<option value="1">大专以下</option>
+														<option value="2">大专</option>
+														<option value="3" selected="">本科</option>
+														<option value="4">硕士</option>
+														<option value="5">博士</option>
+													</select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row profile-summary-school js-row">
+												<label class="form-label">毕业院校：</label>
+												<div class="form-control-select form-input-empty">
+													<div class="form-input form-input-empty">
+														<a class="icon-close delSchool-trigger hidden" href="javascript:;" title="清空"></a>
+														<input class="js-school school-input" type="text" value="">
+													</div>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+
+											<div class="form-row js-row">
+												<label class="form-label">行业：</label>
+												<select class="form-select js-industry"><option value="0">请选择</option><option value="1">计算机/互联网/通信</option><option value="2">公务员/事业单位</option><option value="3">教师</option><option value="4">医生</option><option value="5">护士</option><option value="6">空乘人员</option><option value="7">生产/工艺/制造</option><option value="8">商业/服务业/个体经营</option><option value="9">金融/银行/投资/保险</option><option value="10">文化/广告/传媒</option><option value="11">娱乐/艺术/表演</option><option value="12">律师/法务</option><option value="13">教育/培训/管理咨询</option><option value="14">建筑/房地产/物业</option><option value="15">消费零售/贸易/交通物流</option><option value="16">酒店旅游</option><option value="17">现代农业</option><option value="18">在校学生</option></select>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">工作单位：</label>
+												<div class="form-control-select form-input-empty">
+													<input class="form-input js-company" type="text" value=""></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label">目前职位：</label>
+												<div class="form-control-select">
+													<select class="form-select js-position">
+														<option value="0" selected="selected">请选择</option>
+														<option value="1">普通职员</option>
+														<option value="2">中层管理者</option>
+														<option value="3">高层管理者</option>
+														<option value="4">企业主</option>
+													</select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-row js-row">
+												<label class="form-label"><span class="form-need">*</span>月收入：</label>
+												<div class="form-control-select">
+													<select class="form-select js-salary">
+														<option value="-1">2000元以下</option>
+														<option value="1">2000-4000元</option>
+														<option value="2">4000-6000元</option>
+														<option value="3" selected="">6000-10000元</option>
+														<option value="4">10000-15000元</option>
+														<option value="5">15000-20000元</option>
+														<option value="6">20000-50000元</option>
+														<option value="7">50000元以上</option>
+													</select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<div class="form-btn">
+												<label class="form-label">&nbsp;</label>
+												<div class="form-control-select">
+													<a class="btnM btn-red js-submitBtn" href="javascript:;">保存</a>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+								<div id="detailInfoBox" data-log="detailInfoBox" class="profile-detail">
+									<div class="profile-caption">
+										<h3>详细资料</h3><span class="profile-edit-btnBox"><a title="编辑" class="js-editBtn" href="javascript:;"><em class="icon-edit"></em></a><a class="profile-btn-cancel js-cancelEditBtn hidden" href="javascript:;">取消编辑</a></span></div>
+									<div class="js-preview">
+										<ul class="profileList">
+											<li><span class="profile-label">户口：</span>--</li>
+											<li><span class="profile-label">住房情况：</span>--</li>
+											<li><span class="profile-label">购车情况：</span>--</li>
+											<li><span class="profile-label">民族：</span>--</li>
+											<li><span class="profile-label">籍贯：</span>--</li>
+											<li><span class="profile-label">家中排行：</span>--</li>
+											<li><span class="profile-label">有无子女：</span>--</li>
+											<li><span class="profile-label">星座：</span>水瓶座</li>
+											<li><span class="profile-label">血型：</span>--</li>
+											<li><span class="profile-label">属相：</span>猪</li>
+											<li><span class="profile-label">宗教信仰：</span>--</li>
+											<li><span class="profile-label">微博地址：</span>--
+												<a class="profile-verify-icon icon-sina hidden" title="已认证微博帐户" href="" target="_blank"></a>
+											</li>
+											<li><span class="profile-label">豆瓣地址：</span>--
+												<a class="profile-verify-icon icon-douban hidden" title="已认证豆瓣帐户" href="" target="_blank"></a>
+											</li>
+										</ul>
+									</div>
+									<div class="js-edit hidden">
+										<!-- } edit { -->
+										<div class="form-group profile-detail-group">
+											<!-- 户口 { -->
+											<div class="form-row profile-detail-householdland js-row"><label class="form-label" for="">户口：</label>
+												<div class="form-control-select"><select class="form-select js-householdProvince"><option value="0">-选择省份-</option><option value="1">北京</option><option value="2">上海</option><option value="3">天津</option><option value="4">重庆</option><option value="5">浙江</option><option value="6">江苏</option><option value="7">广东</option><option value="8">福建</option><option value="9">湖南</option><option value="10">湖北</option><option value="11">辽宁</option><option value="12">吉林</option><option value="13">黑龙江</option><option value="14">河北</option><option value="15">河南</option><option value="16">山东</option><option value="17">陕西</option><option value="18">甘肃</option><option value="19">青海</option><option value="20">新疆</option><option value="21">山西</option><option value="22">四川</option><option value="23">贵州</option><option value="24">安徽</option><option value="25">江西</option><option value="26">云南</option><option value="27">内蒙古</option><option value="28">广西</option><option value="29">西藏</option><option value="30">宁夏</option><option value="31">海南</option><option value="32">香港</option><option value="33">澳门</option><option value="34">台湾</option><option value="35">海外</option><option value="36">其他地区</option></select>
+													<select class="form-select js-householdCity" disabled="disabled">
+														<option value="0">-选择城市-</option>
+														</select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- 住房情况 { -->
+											<div class="form-row js-row"><label class="form-label" for="">住房情况：</label>
+												<div class="form-control-select"><select class="form-select js-house"><option value="0">请选择</option><option value="1">已购房</option><option value="2">租房</option><option value="3">单位宿舍</option><option value="4">和家人同住</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 购车情况 { -->
+											<div class="form-row js-row"><label class="form-label" for="">购车情况：</label>
+												<div class="form-control-select"><select class="form-select js-car"><option value="0">请选择</option><option value="1">已购车</option><option value="2">未购车</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 民族 { -->
+											<div class="form-row js-row"><label class="form-label" for="">民族：</label>
+												<div class="form-control-select"><select class="form-select js-nationality"><option value="0">请选择</option><option value="1">汉族</option><option value="2">蒙古族</option><option value="3">回族</option><option value="4">藏族</option><option value="5">维吾尔族</option><option value="6">苗族</option><option value="7">彝族</option><option value="8">壮族</option><option value="9">布依族</option><option value="10">朝鲜族</option><option value="11">满族</option><option value="12">侗族</option><option value="13">瑶族</option><option value="14">白族</option><option value="15">土家族</option><option value="16">哈尼族</option><option value="17">哈萨克族</option><option value="18">傣族</option><option value="19">黎族</option><option value="20">傈僳族</option><option value="21">佤族</option><option value="22">畲族</option><option value="23">高山族</option><option value="24">拉祜族</option><option value="25">水族</option><option value="26">东乡族</option><option value="27">纳西族</option><option value="28">景颇族</option><option value="29">柯尔克孜族</option><option value="30">土族</option><option value="31">达斡尔族</option><option value="32">仫佬族</option><option value="33">羌族</option><option value="34">布朗族</option><option value="35">撒拉族</option><option value="36">毛南族</option><option value="37">仡佬族</option><option value="38">锡伯族</option><option value="39">阿昌族</option><option value="40">普米族</option><option value="41">塔吉克族</option><option value="42">怒族</option><option value="43">乌孜别克族</option><option value="44">俄罗斯族</option><option value="45">鄂温克族</option><option value="46">德昂族</option><option value="47">保安族</option><option value="48">裕固族</option><option value="49">京族</option><option value="50">塔塔尔族</option><option value="51">独龙族</option><option value="52">鄂伦春族</option><option value="53">赫哲族</option><option value="54">门巴族</option><option value="55">珞巴族</option><option value="56">基诺族</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 籍贯 { -->
+											<div class="form-row profile-detail-birthland js-row"><label class="form-label" for="">籍贯：</label>
+												<div class="form-control-select"><select class="form-select js-birthProvince"><option value="0">-选择省份-</option><option value="1">北京</option><option value="2">上海</option><option value="3">天津</option><option value="4">重庆</option><option value="5">浙江</option><option value="6">江苏</option><option value="7">广东</option><option value="8">福建</option><option value="9">湖南</option><option value="10">湖北</option><option value="11">辽宁</option><option value="12">吉林</option><option value="13">黑龙江</option><option value="14">河北</option><option value="15">河南</option><option value="16">山东</option><option value="17">陕西</option><option value="18">甘肃</option><option value="19">青海</option><option value="20">新疆</option><option value="21">山西</option><option value="22">四川</option><option value="23">贵州</option><option value="24">安徽</option><option value="25">江西</option><option value="26">云南</option><option value="27">内蒙古</option><option value="28">广西</option><option value="29">西藏</option><option value="30">宁夏</option><option value="31">海南</option><option value="32">香港</option><option value="33">澳门</option><option value="34">台湾</option><option value="35">海外</option><option value="36">其他地区</option></select>
+													<select class="form-select js-birthCity" disabled="disabled">
+													<option value="0">-选择城市-</option>
+													</select>
+												</div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 家中排行 { -->
+											<div class="form-row js-row"><label class="form-label" for="">家中排行：</label>
+												<div class="form-control-select"><select class="form-select js-birthOrder"><option value="0">请选择</option><option value="1">独生子女</option><option value="2">老大</option><option value="3">老二</option><option value="4">老三</option><option value="5">老四</option><option value="6">老五及更小</option><option value="7">老幺</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 有无子女 { -->
+											<div class="form-row js-row"><label class="form-label" for="">有无子女：</label>
+												<div class="form-control-select"><select class="form-select js-childStatus"><option value="0">请选择</option><option value="1">无小孩</option><option value="2">有小孩归自己</option><option value="3">有小孩归对方</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 星座 { -->
+											<div class="form-row js-row"><label class="form-label" for="">星座：</label>
+												<div class="form-control-select"><select class="form-select js-constellation"><option value="0">请选择</option><option value="1">摩羯座</option><option value="2" selected="">水瓶座</option><option value="3">双鱼座</option><option value="4">白羊座</option><option value="5">金牛座</option><option value="6">双子座</option><option value="7">巨蟹座</option><option value="8">狮子座</option><option value="9">处女座</option><option value="10">天秤座</option><option value="11">天蝎座</option><option value="12">射手座</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 血型 { -->
+											<div class="form-row js-row"><label class="form-label" for="">血型：</label>
+												<div class="form-control-select"><select class="form-select js-blood"><option value="0">请选择</option><option value="1">A型</option><option value="2">B型</option><option value="3">AB型</option><option value="4">O型</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 属相 { -->
+											<div class="form-row js-row"><label class="form-label" for="">属相：</label>
+												<div class="form-control-select"><select class="form-select js-zodiac"><option value="1">鼠</option><option value="2">牛</option><option value="3">虎</option><option value="4">兔</option><option value="5">龙</option><option value="6">蛇</option><option value="7">马</option><option value="8">羊</option><option value="9">猴</option><option value="10">鸡</option><option value="11">狗</option><option value="12" selected="">猪</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 宗教信仰 { -->
+											<div class="form-row js-row"><label class="form-label" for="">宗教信仰：</label>
+												<div class="form-control-select"><select class="form-select js-religion"><option value="0">请选择</option><option value="1">无宗教信仰</option><option value="2">大乘佛教显宗</option><option value="3">大乘佛教密宗</option><option value="4">大乘佛教净宗</option><option value="5">小乘佛教</option><option value="6">道教</option><option value="7">儒教</option><option value="8">基督教天主教派</option><option value="9">基督教东正教派</option><option value="10">基督教新教派</option><option value="11">犹太教</option><option value="12">伊斯兰教什叶派</option><option value="13">伊斯兰教逊尼派</option><option value="14">印度教</option><option value="15">神道教</option><option value="16">萨满教</option><option value="17">其他教派</option></select></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 我的微博 { -->
+											<div class="form-row js-row"><label class="form-label" for="">微博地址：</label>
+												<div class="form-control-select"><input type="text" class="form-input js-microblog " value=""><span class="profile-verify-weibo js-weiboVerify hidden"><a class="profile-verify-icon icon-sina js-weiboIcon" href="" title="已认证微博帐户" target="_blank"></a><a class="js-unverifyWB" href="javascript:;" title="取消认证微博">取消认证</a></span></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } 我的豆瓣 { -->
+											<div class="form-row js-row"><label class="form-label" for="">豆瓣地址：</label>
+												<div class="form-control-select"><input type="text" class="form-input js-douban " value=""><span class="profile-verify-douban js-doubanVerify hidden"><a class="profile-verify-icon icon-douban js-doubanIcon" href="" title="已认证豆瓣帐户" target="_blank"></a><a class="js-unverifyDB" href="javascript:;" title="取消认证微博">取消认证</a></span></div>
+												<div class="form-tips"><span class="text-icon-tips js-tips hidden"></span></div>
+											</div>
+											<!-- } -->
+											<div class="form-btn"><label class="form-label">&nbsp;</label>
+												<div class="form-control-select"><a class="btnM btn-red js-submitBtn" href="javascript:;">保存</a></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="conR">
+					<div class="conR-inner">
+						<div class="js-adBanner-r1 right-module module-upgradeVip" style="display:none;">
+						</div>
+						<div class="js-adBanner-r2 right-module module-focus" style="display:none;">
+						</div>
+						<div id="moduleGoodNews" class="right-module module-goodNews" style="display: none;" data-log="goodNews">
+							<div class="right-module-hd">
+								<h3 class="text-dark-gray"><a href="/wedding/recommend" target="_blank">花田喜事</a></h3>
+								<a class="fR" href="/wedding/create" target="_blank">分享喜事</a>
+							</div>
+							<div class="wedding-recommend-container js-wedding-recommend-container"></div>
+							<a href="/wedding/recommend" target="_blank">
+								<div class="right-module-bd">
+									<ul class="module-goodNews-list js-list"></ul>
+								</div>
+							</a>
+						</div>
+						<div id="rightUserGuide" class="right-module module-userGuide">
+							<div class="right-module-hd">
+								<h3 class="text-dark-gray">花田相关</h3>
+							</div>
+							<div class="right-module-bd">
+								<ul>
+									<li><span class="text-dark-gray">新手上路：</span><a href="/guide" target="_blank">教你快速找到意中人</a></li>
+									<li><span class="text-dark-gray">安全中心：</span><a href="/safe" target="_blank">网上交友如何防骗</a></li>
+									<li><span class="text-dark-gray">花田帮助：</span><a href="/help/faq" target="_blank">常见反馈问题解答</a></li>
+									<li><span class="text-dark-gray">联系客服：</span><a class="js-feedback" href="javascript:;">咨询花田客服</a><br>( 工作日 10点 - 18点 )</li>
+									<li class="module-userGuide-list"><span class="text-dark-gray">关注花田：</span>
+										<a class="icon-guide-weibo" href="//weibo.com/ihuatian" target="_blank"></a>
+										<a class="icon-guide-douban" href="//site.douban.com/188797/" target="_blank"></a><a class="module-userGuide-wx icon-guide-wx user-guide-trigger js-guide-wx" href="javascript:;"><em></em></a></li>
+								</ul>
+							</div>
+							<div class="right-module-hd">
+								<h3 class="text-dark-gray">市场合作</h3>
+							</div>
+							<div class="right-module-bd">
+								<ul>
+									<!-- <li><span class="text-dark-gray">联系人：</span><span>凌先生</span></li> -->
+									<!-- <li><span class="text-dark-gray">电话：</span><span>020-85105163 转 54459</span></li> -->
+									<li><span class="text-dark-gray">邮箱：</span><span>bd.love163@service.netease.com</span></li>
+								</ul>
+							</div>
+							<!-- 1512963077827 -->
+							<div class="weixin-guide js-weixin-guide">
+								<p class="p1">
+									关注花田君&nbsp;缘分不错过
+								</p>
+								<img src="//img1.cache.netease.com/love/image/activities/weixin/weixin_attract.png">
+								<p class="p2">使用微信扫描即可关注</p>
+							</div>
+						</div>
+						<div class="js-adBannerBox-a1 js-adBannerBox-a2 right-module module-activities" style="display: none;">
+							<div class="right-module-hd">
+								<h3 class="text-dark-gray">精彩活动</h3>
+							</div>
+							<div class="right-module-bd js-bd">
+								<div class="js-adBanner-a1 module-activities-imgBox" style="display: none;"></div>
+								<ul class="js-adBanner-a2 module-activities-list" style="display: none;"></ul>
+							</div>
+						</div>
+						<ul class="js-adBanner-hz right-module module-rightAds" style="display: none;"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<footer class="footer">
+			<div class="foot">
+				<a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" target="_blank">招聘信息</a> - <a href="/protocol"
+					target="_blank">使用条款</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">花田动态</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">友情链接</a> - <a href="http://sitemap.163.com/" target="_blank">网站地图</a> -
+				<a href="javascript:;" class=" need-login ">花田意见反馈</a> - 增值电信业务经营许可证：<a class="" target="_blank" href="https://tsm.miit.gov.cn/pages/home.aspx">浙B1.B2-20090185</a> <br> 网易公司版权所有
+				<br>
+				<span class="cRed">©1997-2017</span>
+			</div>
+		</footer>
+		<div class="modal fade" id="photomodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="js-title">发布动态</h3>
+					</div>
+					<div class="modal-body">
+						<div class="tag-container">
+							<p class="title">大家都在聊：</p>
+							<ul class="js-tag-list tag-list">
+								<li class="js-add-tag tag">#我家主子#</li>
+								<li class="js-add-tag tag">#世界很精彩#</li>
+								<li class="js-add-tag tag">#致各种花田骗子#</li>
+								<li class="js-add-tag tag">#你好旧时光#</li>
+								<li class="js-add-tag tag">#我是单身汪#</li>
+								<li class="js-add-tag tag">#单身求解放#</li>
+								<li class="js-add-tag tag">#挚爱梵高#</li>
+								<li class="js-add-tag tag">#起来嗨#</li>
+								<li class="js-create-tag tag">+自定义标签</li>
+							</ul>
+						</div>
+						<div class="trend-content-container">
+							<p class="js-placeholder placeholder" style="display: block;">说出你的心声让大家认识你吧</p>
+							<textarea class="js-trend-content trend-content" style="height: 66px;"></textarea>
+							<p class="word-count"><span class="js-word-count">0</span>/163</p>
+						</div>
+						<ul class="photo-group js-photo-group">
+							<li class="photo-uploader js-photo-uploader js-upload-drag">
+								<p class="bottom-desc"><i class="icon-add-b"></i><br>
+									<span class="text">点击或者拖入上传</span>
+								</p>
+								<form class="js-upload-form" action="/upload" method="POST" accept-charset="utf-8" enctype="multipart/form-data">
+									<input type="file" class="btn-file" name="uploadPhoto" accept="image/jpg,image/jpeg,image/png,image/gif,image/bmp" multiple="">
+								</form>
+							</li>
+						</ul>
+						<div class="photo-tip">
+							<p class="photo-number">还可上传&nbsp;
+								<span class="js-photo-number">9</span>&nbsp;张图片（大小支持10K-8M）
+							</p>
+							<p class="js-photo-errors photo-errors"></p>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div class="poplayer-btn"><a class="btn btn-red disabled submit-trigger" href="javascript:;">发布</a></div>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+		</div>
+		<div class="poplayer poplayer-letter hidden" style="visibility: visible;">
+			<div class="poplayer-main js-main" style="top: 209px;left: 30%;">
+				<div class="poplayer-hd js-hd">
+					<a class="icon-close close-trigger" title="关闭" href="javascript:;"></a>
+					<h3 class="js-title">文字传情</h3><span class="text-md poplayer-subtitle">表达爱的心语,遥寄未来的TA</span></div>
+				<div class="js-body">
+					<div class="poplayer-bd">
+						<div class="poplayer-letter-template js-tab">
+							<a class="current myfirst" href="javascript:;">无主情话</a>
+							<a class="myfirst" href="javascript:;">时光隧道</a>
+							<a class="myfirst" href="javascript:;">独居生活</a>
+							<a class="myfirst" href="javascript:;">想对你说</a></div>
+						<div class="poplayer-letter-content js-content letter-template-default">
+							<div class="letter-body">
+								<div class="letter-hd">
+									<h2 class="letter-hd-title"><span class="n-letter-title-default">随便说点情话：</span><span class="n-letter-title-past">分享我的过去：</span><span class="n-letter-title-xiaoshipian">记录现在的生活：</span><span class="n-letter-title-unbosom">写给喜欢的人：</span></h2></div>
+								<div class="letter-bd">
+									<div class="poplayer-letter-textarea js-textareaCon">
+										<textarea class="ui-scrollbar" style="height: 28px; overflow-y: hidden;"></textarea></div>
+									<p class="poplayer-letter-sign">——by&nbsp;没什么</p>
+								</div>
+								<div class="letter-ft"></div>
+							</div>
+						</div>
+						<div class="poplayer-letter-ft js-send-btn">
+							<div class="n-display-block">
+								<div class="poplayer-letter-btn n-btn-box js-btn">
+									<div class="js-btn-txt disabled">
+										<a class="btn btn-red n-btn-sure submit-trigger" href="javascript:;">发布</a></div>
+								</div>
+								
+								<span class="poplayer-letter-tips js-lineCounter warn">至少输入
+									<b class="char-constantia">10</b>个字
+								</span>
+							</div>
+							<div class="n-display-none">
+								<span class="text-small-tips cGray">
+									<em class="icon-correct-s" style="vertical-align: text-top; margin-right: 3px;">
+									</em>发布成功！</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="masklayer hidden" style="z-index: 999; width: 100%; height: 100%;"></div>
+	</body>
+	<script src="js/navfoot.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/personal.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			
+		});
+	</script>
+
+</html>
