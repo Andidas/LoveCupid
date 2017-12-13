@@ -1,0 +1,229 @@
+
+/*顶部*/
+#top{
+	height: 110px;
+	position: relative;
+	overflow: hidden;
+}
+#top #vipBanner{
+	position: absolute;
+}
+
+#top #girls{
+	left:180px;
+	position: absolute;
+}
+#top #girls img{
+	position:absolute;
+	top:20px;
+	width: 68px;
+	height: 70px;
+	transition: all 0.6s;
+}
+#mateConditon{
+	position:relative;
+	left:15px;
+	top:30px;
+}
+/*编辑*/
+#edit{
+	cursor:pointer;
+	position: relative;
+	top:30px;
+	left: 499px;
+} 
+/*条件查询*/
+#query{
+	padding:10px;
+	height: 110px;
+	background:white;
+	overflow: hidden;
+	transition:all 0.6s;
+	/* margin-bottom: 60px; */
+}
+
+/*中间主题部分*/
+#center{
+	position:relative;
+	background:#EDEFF5;
+}
+#center #openVip{
+	position:relative;
+	color:red;
+	left:40px;
+	top:60px;
+}
+#center .photo{
+	margin-top: 5px;
+}
+#center #moreConditonSpan{
+	position:relative;
+	top:27px;
+	left:124px;
+
+}
+#center #moreConditonA{
+	position:relative;
+	top:33px;
+	left:129px;
+	display:inline-block;
+	border:1px solid #ccc;
+	width: 22px;
+	height: 22px;
+	background:url("../images/icon.png") -133px 706px;
+
+	
+}
+/*测试*/
+#query .btn-group,#openVip,#mateConditon,#center #moreConditonSpan,#center #moreConditonA{
+/* 	display: none; */
+}
+
+#query .btn-group{
+	position: relative;
+	top:60px;	
+}
+#query .btn-group select{
+	width: 105px;
+}
+#query #second{
+	top:70px;
+}
+#query .btn-group .dropdown-toggle{
+	margin-right: 15px;
+}
+#query .btn-group btn{
+	margin: 10px;
+}
+#query .btn-group .char{
+	width: 80px;
+}
+#center .infoDetail{
+	background:white;
+	height: 150px;
+	margin-bottom: 30px;
+}
+.infoDetail{
+	position: relative;
+}
+.describe{
+	position: absolute;
+	top:0px;
+	left:150px;	
+}
+.describe .recom{
+	position: absolute;
+	left:410px;
+	top:0px;
+	color: #999;
+	font-family: Georgia;
+}
+.describe .recom:hover{
+	cursor:pointer;
+	color:#5B5B5B;
+}
+.describe .recom:hover b{
+	color:#448FE9;
+}
+.describe .recom b{
+	font-size: 20px;
+}
+#center .collection,#center .delete,#center .hello{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+}
+
+#center .collection img,#center .delete img,#center .hello img{
+	margin-top: 10px;
+}
+
+
+/*喜欢，没兴趣，打招呼共同的css*/
+#center .collection img,#center .delete img,#center .hello img{
+	transition:all 0.6s;
+}
+#center .collection:hover img,#center .delete:hover img,#center .hello:hover img{
+	transform:scale(1.4);  
+}
+/*喜欢*/
+#center .collection{
+	top:0px;
+	right:0px;
+	border-right: 4px solid #FFAFAF;
+}
+
+#center .collection:hover{
+	border-color:#FF7F72;
+}
+/*没兴趣*/
+#center .delete{
+	top:50px;
+	right:0px;
+	border-right: 4px solid #9BC8FF;
+}
+
+#center .delete:hover{
+	border-color: #3CACEC;
+}
+/*打招呼*/
+#center .hello{
+	top:100px;
+	right:0px;
+	border-right: 4px solid #D3D3D3;
+}
+
+#center .hello:hover{
+	border-color: #AEAEAE;
+}
+/*正在寻找*/
+.looking{
+	margin-top: 10px;
+}
+/*推荐理由*/
+.recomReason{
+	margin-top: 25px;
+}
+/*通知*/
+ #inform{
+	position: relative;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+}
+.education{
+	position:relative;
+	top:3px;
+	width: 125px;
+	margin-left: 10px;
+}
+.age,.height,.income{
+	margin-top:10px;
+	width: 60px;
+}
+.city-picker-select{
+	position:relative;
+	top:3px;
+	display: inline-block;
+}
+#save{
+	margin-left: 0px;
+}
+#queryCondition{
+	overflow:hidden;
+	height:0px;
+	transition:all 0.6s;
+	background: white;
+	margin-top: 20px;
+	padding: 3px;
+	
+}
+#querybox{
+	background: white;
+	padding-bottom: 5px;
+}
+/*姓名*/
+.name{
+	margin-bottom: 20px;
+}
+
