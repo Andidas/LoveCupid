@@ -3,7 +3,7 @@ body{
 }
 
 #mynav {
-	background: transparent url("../img/navibg.png") repeat-x left top;
+	background: transparent url("../images/navibg.png") repeat-x left top;
 	width: 100%;
 	bottom: 0px;
 	height: 51px;
@@ -42,7 +42,7 @@ body{
 }
 
 .navbar-header a {
-	background: transparent url(../img/logo_v140801.png) no-repeat;
+	background: transparent url(../images/logo_v140801.png) no-repeat;
 	height: 38px;
 	width: 112px;
 }

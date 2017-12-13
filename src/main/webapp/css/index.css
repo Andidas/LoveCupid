@@ -2,7 +2,7 @@
 	background-color: #FFF;
 	background-repeat: no-repeat;
 	background-position: center bottom;
-	background-image: url(../img/login_bg_01.jpg);
+	background-image: url(../images/login_bg_01.jpg);
 	height: 680px;
 }
 
@@ -417,7 +417,7 @@ a.link-red:hover,
 .icon-guide-weibo,
 .icon-guide-douban {
 	background-color: transparent;
-	background-image: url(../img/icon_v171023.png);
+	background-image: url(../images/icon_v171023.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 }

@@ -2362,7 +2362,7 @@ a.link-tt:hover,
 .vipBanner-user-svip,
 .topic-mainbox-vote-label em {
 	background-color: transparent;
-	background-image: url(../img/icon_v171023.png);
+	background-image: url(../images/icon_v171023.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 }
@@ -2576,7 +2576,7 @@ a.link-tt:hover,
 .icon-upload-profile-qa em,
 .icon-upload-profile-date em {
 	background-color: transparent;
-	background-image: url(../img/publish_v170704.png);
+	background-image: url(../images/publish_v170704.png);
 	background-repeat: no-repeat;
 	display: inline-block;
 	font-size: 0;
@@ -16778,7 +16778,7 @@ select:focus {
 .sns-share-douban,
 .sns-share-kaixin,
 .sns-share-qzone {
-	background-image: url(url(../img/sns_21_v161110.png));
+	background-image: url(url(../images/sns_21_v161110.png));
 	background-repeat: no-repeat;
 	cursor: pointer;
 	display: inline-block;
@@ -16864,7 +16864,7 @@ select:focus {
 .icon-share-renren-w,
 .icon-share-wechat-w,
 .icon-share-yixin-w {
-	background-image: url(url(../img/sns_21_v161110.png));
+	background-image: url(url(../images/sns_21_v161110.png));
 	background-repeat: no-repeat;
 	cursor: pointer;
 	display: inline-block;
@@ -17076,7 +17076,7 @@ select:focus {
 	float: left;
 	width: 37px;
 	height: 32px;
-	background: url(url(../img/sns_21_v161110.png)) no-repeat 0 -490px;
+	background: url(url(../images/sns_21_v161110.png)) no-repeat 0 -490px;
 }
 
 .shareKit-big-list .qzone {
