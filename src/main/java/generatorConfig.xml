@@ -30,18 +30,92 @@
 	</javaClientGenerator>
 	
 	<!-- 配置表信息 -->	
-	<table schema="${jdbc_user}" tableName="student" domainObjectName="Student">
+	<!-- 基本信息表 -->
+	 <table schema="${jdbc_user}" tableName="userbasic" domainObjectName="UserBasic">
 		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
-		<generatedKey column="sid" sqlStatement="select seq_student.nextval from dual"/>
-		<columnOverride column="sid" javaType="java.lang.Integer" />
-		<columnOverride column="sage" javaType="java.lang.Integer" />
+		<generatedKey column="ubid" sqlStatement="select seq_userbasic.nextval from dual"/>
+		<columnOverride column="ubid" javaType="java.lang.Integer" />
+		<columnOverride column="ubphone" javaType="java.lang.Integer" />
+		<columnOverride column="ubheight" javaType="java.lang.Integer" />
+		<columnOverride column="ubweight" javaType="java.lang.Integer" />
 	</table>
-	<table schema="${jdbc_user}" tableName="book" domainObjectName="Book">
+	<!-- 详细信息表 -->
+	<table schema="${jdbc_user}" tableName="userdetail" domainObjectName="UserDetail">
 		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
-		<generatedKey column="bookid" sqlStatement="select seq_book.nextval from dual"/>
-		<columnOverride column="bookid" javaType="java.lang.Integer" />
-		<columnOverride column="stuid" javaType="java.lang.Integer" />
-		<columnOverride column="bookprice" javaType="java.lang.Double" />
+		<columnOverride column="udid" javaType="java.lang.Integer" />
+	</table>
+	<!-- 用户交友要求表 -->
+	<table schema="${jdbc_user}" tableName="userfriend" domainObjectName="UserFriend">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<columnOverride column="ufid" javaType="java.lang.Integer" />
+		<columnOverride column="ufstartheight" javaType="java.lang.Integer" />
+		<columnOverride column="ufendheighe" javaType="java.lang.Integer" />
+		<columnOverride column="ufstartage" javaType="java.lang.Integer" />
+		<columnOverride column="ufendage" javaType="java.lang.Integer" />
+		<columnOverride column="ufstartsal" javaType="java.lang.Integer" />
+		<columnOverride column="ufendsal" javaType="java.lang.Integer" />
+	</table>
+	<!-- 用户发表动态表 -->
+	<table schema="${jdbc_user}" tableName="userdynamic" domainObjectName="UserDynamic">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<generatedKey column="udnid" sqlStatement="select seq_userdynamic.nextval from dual"/>
+		<columnOverride column="udnid" javaType="java.lang.Integer" />
+		<columnOverride column="ubid" javaType="java.lang.Integer" />
+	</table>
+	<!-- 会员交友条件表 -->
+	<table schema="${jdbc_user}" tableName="memberscreen" domainObjectName="MemberScreen">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<columnOverride column="msid" javaType="java.lang.Integer" />
+	</table>
+	<!-- 私信表 -->
+	<table schema="${jdbc_user}" tableName="privateletter" domainObjectName="PrivateLetter">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<generatedKey column="plid" sqlStatement="select seq_privateletter.nextval from dual"/>
+		<columnOverride column="plid" javaType="java.lang.Integer" />
+		<columnOverride column="plsendid" javaType="java.lang.Integer" />
+		<columnOverride column="placcept" javaType="java.lang.Integer" />
+	</table>
+	<!-- 成功故事分享 -->
+	<table schema="${jdbc_user}" tableName="successfulstory" domainObjectName="SuccessfulStory">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<generatedKey column="ssid" sqlStatement="select seq_successfulstory.nextval from dual"/>
+		<columnOverride column="ssmeid" javaType="java.lang.Integer" />
+		<columnOverride column="ssyourid" javaType="java.lang.Integer" />
+		<columnOverride column="ssid" javaType="java.lang.Integer" />
+	</table>
+	
+	<!-- 寻人启事表	 -->
+	<table schema="${jdbc_user}" tableName="selfnomination" domainObjectName="SelfNomination">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<generatedKey column="snid" sqlStatement="select seq_selfnomination.nextval from dual"/>
+		<columnOverride column="snid" javaType="java.lang.Integer" />
+	</table>
+	<!-- 动态点赞表	 -->
+	<table schema="${jdbc_user}" tableName="Dynamictage" domainObjectName="DynamicTage">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<generatedKey column="Dtid" sqlStatement="select seq_dynamictage.nextval from dual"/>
+		<columnOverride column="Dtid" javaType="java.lang.Integer" />
+		<columnOverride column="Dtudnid" javaType="java.lang.Integer" />
+		<columnOverride column="Dtubid" javaType="java.lang.Integer" />
+    </table>
+   <!--  喜欢表	 -->
+	<table schema="${jdbc_user}" tableName="userlike" domainObjectName="UserLike">
+		<!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample 是否生成 example类   -->
+		<generatedKey column="Ulid" sqlStatement="select seq_userlike.nextval from dual"/>
+		<columnOverride column="Ulid" javaType="java.lang.Integer" />
+		<columnOverride column="Ulubid" javaType="java.lang.Integer" />
+		<columnOverride column="Ulbyubid" javaType="java.lang.Integer" />
+	</table> 
+	<!-- 意见反馈 -->
+	<table schema="${jdbc_user}" tableName="feedback" domainObjectName="FeedBack">
+		<generatedKey column="fbid" sqlStatement="select seq_feedback.nextval from dual"/>
+		<columnOverride column="fbid" javaType="java.lang.Integer" />
+		<columnOverride column="fbphone" javaType="java.lang.Integer" />
+	</table>
+	<!-- 管理员 -->
+	<table schema="${jdbc_user}" tableName="loveadmin" domainObjectName="LoveAdmin">
+		<generatedKey column="admin_id" sqlStatement="select seq_loveadmin.nextval from dual"/>
+		<columnOverride column="admin_id" javaType="java.lang.Integer" />
 	</table>
   </context>
 </generatorConfiguration>
