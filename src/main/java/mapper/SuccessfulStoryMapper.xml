@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.SuccessfulStoryMapper" >
+  <resultMap id="BaseResultMap" type="entity.SuccessfulStory" >
+    <id column="SSID" property="ssid" jdbcType="DECIMAL" />
+    <result column="SSMEID" property="ssmeid" jdbcType="DECIMAL" />
+    <result column="SSYOURID" property="ssyourid" jdbcType="DECIMAL" />
+    <result column="SSCOURSE" property="sscourse" jdbcType="VARCHAR" />
+    <result column="SSDATE" property="ssdate" jdbcType="VARCHAR" />
+    <result column="SSTITLE" property="sstitle" jdbcType="VARCHAR" />
+    <result column="SSCONTENT" property="sscontent" jdbcType="VARCHAR" />
+    <result column="SSPHOTO" property="ssphoto" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    SSID, SSMEID, SSYOURID, SSCOURSE, SSDATE, SSTITLE, SSCONTENT, SSPHOTO
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.SuccessfulStoryExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.SUCCESSFULSTORY
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.SUCCESSFULSTORY
+    where SSID = #{ssid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.SUCCESSFULSTORY
+    where SSID = #{ssid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.SuccessfulStoryExample" >
+    delete from LOVECUPID.SUCCESSFULSTORY
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.SuccessfulStory" >
+    <selectKey resultType="java.lang.Integer" keyProperty="ssid" order="BEFORE" >
+      select seq_successfulstory.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.SUCCESSFULSTORY (SSID, SSMEID, SSYOURID, 
+      SSCOURSE, SSDATE, SSTITLE, 
+      SSCONTENT, SSPHOTO)
+    values (#{ssid,jdbcType=DECIMAL}, #{ssmeid,jdbcType=DECIMAL}, #{ssyourid,jdbcType=DECIMAL}, 
+      #{sscourse,jdbcType=VARCHAR}, #{ssdate,jdbcType=VARCHAR}, #{sstitle,jdbcType=VARCHAR}, 
+      #{sscontent,jdbcType=VARCHAR}, #{ssphoto,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.SuccessfulStory" >
+    <selectKey resultType="java.lang.Integer" keyProperty="ssid" order="BEFORE" >
+      select seq_successfulstory.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.SUCCESSFULSTORY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      SSID,
+      <if test="ssmeid != null" >
+        SSMEID,
+      </if>
+      <if test="ssyourid != null" >
+        SSYOURID,
+      </if>
+      <if test="sscourse != null" >
+        SSCOURSE,
+      </if>
+      <if test="ssdate != null" >
+        SSDATE,
+      </if>
+      <if test="sstitle != null" >
+        SSTITLE,
+      </if>
+      <if test="sscontent != null" >
+        SSCONTENT,
+      </if>
+      <if test="ssphoto != null" >
+        SSPHOTO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{ssid,jdbcType=DECIMAL},
+      <if test="ssmeid != null" >
+        #{ssmeid,jdbcType=DECIMAL},
+      </if>
+      <if test="ssyourid != null" >
+        #{ssyourid,jdbcType=DECIMAL},
+      </if>
+      <if test="sscourse != null" >
+        #{sscourse,jdbcType=VARCHAR},
+      </if>
+      <if test="ssdate != null" >
+        #{ssdate,jdbcType=VARCHAR},
+      </if>
+      <if test="sstitle != null" >
+        #{sstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="sscontent != null" >
+        #{sscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="ssphoto != null" >
+        #{ssphoto,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.SuccessfulStoryExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.SUCCESSFULSTORY
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.SUCCESSFULSTORY
+    <set >
+      <if test="record.ssid != null" >
+        SSID = #{record.ssid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ssmeid != null" >
+        SSMEID = #{record.ssmeid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ssyourid != null" >
+        SSYOURID = #{record.ssyourid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sscourse != null" >
+        SSCOURSE = #{record.sscourse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ssdate != null" >
+        SSDATE = #{record.ssdate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sstitle != null" >
+        SSTITLE = #{record.sstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sscontent != null" >
+        SSCONTENT = #{record.sscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ssphoto != null" >
+        SSPHOTO = #{record.ssphoto,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.SUCCESSFULSTORY
+    set SSID = #{record.ssid,jdbcType=DECIMAL},
+      SSMEID = #{record.ssmeid,jdbcType=DECIMAL},
+      SSYOURID = #{record.ssyourid,jdbcType=DECIMAL},
+      SSCOURSE = #{record.sscourse,jdbcType=VARCHAR},
+      SSDATE = #{record.ssdate,jdbcType=VARCHAR},
+      SSTITLE = #{record.sstitle,jdbcType=VARCHAR},
+      SSCONTENT = #{record.sscontent,jdbcType=VARCHAR},
+      SSPHOTO = #{record.ssphoto,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.SuccessfulStory" >
+    update LOVECUPID.SUCCESSFULSTORY
+    <set >
+      <if test="ssmeid != null" >
+        SSMEID = #{ssmeid,jdbcType=DECIMAL},
+      </if>
+      <if test="ssyourid != null" >
+        SSYOURID = #{ssyourid,jdbcType=DECIMAL},
+      </if>
+      <if test="sscourse != null" >
+        SSCOURSE = #{sscourse,jdbcType=VARCHAR},
+      </if>
+      <if test="ssdate != null" >
+        SSDATE = #{ssdate,jdbcType=VARCHAR},
+      </if>
+      <if test="sstitle != null" >
+        SSTITLE = #{sstitle,jdbcType=VARCHAR},
+      </if>
+      <if test="sscontent != null" >
+        SSCONTENT = #{sscontent,jdbcType=VARCHAR},
+      </if>
+      <if test="ssphoto != null" >
+        SSPHOTO = #{ssphoto,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SSID = #{ssid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.SuccessfulStory" >
+    update LOVECUPID.SUCCESSFULSTORY
+    set SSMEID = #{ssmeid,jdbcType=DECIMAL},
+      SSYOURID = #{ssyourid,jdbcType=DECIMAL},
+      SSCOURSE = #{sscourse,jdbcType=VARCHAR},
+      SSDATE = #{ssdate,jdbcType=VARCHAR},
+      SSTITLE = #{sstitle,jdbcType=VARCHAR},
+      SSCONTENT = #{sscontent,jdbcType=VARCHAR},
+      SSPHOTO = #{ssphoto,jdbcType=VARCHAR}
+    where SSID = #{ssid,jdbcType=DECIMAL}
+  </update>
+</mapper>

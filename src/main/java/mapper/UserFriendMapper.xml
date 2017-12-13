@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.UserFriendMapper" >
+  <resultMap id="BaseResultMap" type="entity.UserFriend" >
+    <id column="UFID" property="ufid" jdbcType="DECIMAL" />
+    <result column="UFSTARTHEIGHT" property="ufstartheight" jdbcType="DECIMAL" />
+    <result column="UFENDHEIGHE" property="ufendheighe" jdbcType="DECIMAL" />
+    <result column="UFSTARTAGE" property="ufstartage" jdbcType="DECIMAL" />
+    <result column="UFENDAGE" property="ufendage" jdbcType="DECIMAL" />
+    <result column="UFDEGREE" property="ufdegree" jdbcType="VARCHAR" />
+    <result column="UFSTARTSAL" property="ufstartsal" jdbcType="DECIMAL" />
+    <result column="UFENDSAL" property="ufendsal" jdbcType="DECIMAL" />
+    <result column="UFAPARTMENT" property="ufapartment" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    UFID, UFSTARTHEIGHT, UFENDHEIGHE, UFSTARTAGE, UFENDAGE, UFDEGREE, UFSTARTSAL, UFENDSAL, 
+    UFAPARTMENT
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.UserFriendExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERFRIEND
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERFRIEND
+    where UFID = #{ufid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.USERFRIEND
+    where UFID = #{ufid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.UserFriendExample" >
+    delete from LOVECUPID.USERFRIEND
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.UserFriend" >
+    insert into LOVECUPID.USERFRIEND (UFID, UFSTARTHEIGHT, UFENDHEIGHE, 
+      UFSTARTAGE, UFENDAGE, UFDEGREE, 
+      UFSTARTSAL, UFENDSAL, UFAPARTMENT
+      )
+    values (#{ufid,jdbcType=DECIMAL}, #{ufstartheight,jdbcType=DECIMAL}, #{ufendheighe,jdbcType=DECIMAL}, 
+      #{ufstartage,jdbcType=DECIMAL}, #{ufendage,jdbcType=DECIMAL}, #{ufdegree,jdbcType=VARCHAR}, 
+      #{ufstartsal,jdbcType=DECIMAL}, #{ufendsal,jdbcType=DECIMAL}, #{ufapartment,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.UserFriend" >
+    insert into LOVECUPID.USERFRIEND
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ufid != null" >
+        UFID,
+      </if>
+      <if test="ufstartheight != null" >
+        UFSTARTHEIGHT,
+      </if>
+      <if test="ufendheighe != null" >
+        UFENDHEIGHE,
+      </if>
+      <if test="ufstartage != null" >
+        UFSTARTAGE,
+      </if>
+      <if test="ufendage != null" >
+        UFENDAGE,
+      </if>
+      <if test="ufdegree != null" >
+        UFDEGREE,
+      </if>
+      <if test="ufstartsal != null" >
+        UFSTARTSAL,
+      </if>
+      <if test="ufendsal != null" >
+        UFENDSAL,
+      </if>
+      <if test="ufapartment != null" >
+        UFAPARTMENT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ufid != null" >
+        #{ufid,jdbcType=DECIMAL},
+      </if>
+      <if test="ufstartheight != null" >
+        #{ufstartheight,jdbcType=DECIMAL},
+      </if>
+      <if test="ufendheighe != null" >
+        #{ufendheighe,jdbcType=DECIMAL},
+      </if>
+      <if test="ufstartage != null" >
+        #{ufstartage,jdbcType=DECIMAL},
+      </if>
+      <if test="ufendage != null" >
+        #{ufendage,jdbcType=DECIMAL},
+      </if>
+      <if test="ufdegree != null" >
+        #{ufdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="ufstartsal != null" >
+        #{ufstartsal,jdbcType=DECIMAL},
+      </if>
+      <if test="ufendsal != null" >
+        #{ufendsal,jdbcType=DECIMAL},
+      </if>
+      <if test="ufapartment != null" >
+        #{ufapartment,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.UserFriendExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.USERFRIEND
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.USERFRIEND
+    <set >
+      <if test="record.ufid != null" >
+        UFID = #{record.ufid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufstartheight != null" >
+        UFSTARTHEIGHT = #{record.ufstartheight,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufendheighe != null" >
+        UFENDHEIGHE = #{record.ufendheighe,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufstartage != null" >
+        UFSTARTAGE = #{record.ufstartage,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufendage != null" >
+        UFENDAGE = #{record.ufendage,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufdegree != null" >
+        UFDEGREE = #{record.ufdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ufstartsal != null" >
+        UFSTARTSAL = #{record.ufstartsal,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufendsal != null" >
+        UFENDSAL = #{record.ufendsal,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ufapartment != null" >
+        UFAPARTMENT = #{record.ufapartment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.USERFRIEND
+    set UFID = #{record.ufid,jdbcType=DECIMAL},
+      UFSTARTHEIGHT = #{record.ufstartheight,jdbcType=DECIMAL},
+      UFENDHEIGHE = #{record.ufendheighe,jdbcType=DECIMAL},
+      UFSTARTAGE = #{record.ufstartage,jdbcType=DECIMAL},
+      UFENDAGE = #{record.ufendage,jdbcType=DECIMAL},
+      UFDEGREE = #{record.ufdegree,jdbcType=VARCHAR},
+      UFSTARTSAL = #{record.ufstartsal,jdbcType=DECIMAL},
+      UFENDSAL = #{record.ufendsal,jdbcType=DECIMAL},
+      UFAPARTMENT = #{record.ufapartment,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.UserFriend" >
+    update LOVECUPID.USERFRIEND
+    <set >
+      <if test="ufstartheight != null" >
+        UFSTARTHEIGHT = #{ufstartheight,jdbcType=DECIMAL},
+      </if>
+      <if test="ufendheighe != null" >
+        UFENDHEIGHE = #{ufendheighe,jdbcType=DECIMAL},
+      </if>
+      <if test="ufstartage != null" >
+        UFSTARTAGE = #{ufstartage,jdbcType=DECIMAL},
+      </if>
+      <if test="ufendage != null" >
+        UFENDAGE = #{ufendage,jdbcType=DECIMAL},
+      </if>
+      <if test="ufdegree != null" >
+        UFDEGREE = #{ufdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="ufstartsal != null" >
+        UFSTARTSAL = #{ufstartsal,jdbcType=DECIMAL},
+      </if>
+      <if test="ufendsal != null" >
+        UFENDSAL = #{ufendsal,jdbcType=DECIMAL},
+      </if>
+      <if test="ufapartment != null" >
+        UFAPARTMENT = #{ufapartment,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where UFID = #{ufid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.UserFriend" >
+    update LOVECUPID.USERFRIEND
+    set UFSTARTHEIGHT = #{ufstartheight,jdbcType=DECIMAL},
+      UFENDHEIGHE = #{ufendheighe,jdbcType=DECIMAL},
+      UFSTARTAGE = #{ufstartage,jdbcType=DECIMAL},
+      UFENDAGE = #{ufendage,jdbcType=DECIMAL},
+      UFDEGREE = #{ufdegree,jdbcType=VARCHAR},
+      UFSTARTSAL = #{ufstartsal,jdbcType=DECIMAL},
+      UFENDSAL = #{ufendsal,jdbcType=DECIMAL},
+      UFAPARTMENT = #{ufapartment,jdbcType=VARCHAR}
+    where UFID = #{ufid,jdbcType=DECIMAL}
+  </update>
+</mapper>

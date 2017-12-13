@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.FeedBackMapper" >
+  <resultMap id="BaseResultMap" type="entity.FeedBack" >
+    <id column="FBID" property="fbid" jdbcType="DECIMAL" />
+    <result column="FBPHONE" property="fbphone" jdbcType="DECIMAL" />
+    <result column="FBCONTENT" property="fbcontent" jdbcType="VARCHAR" />
+    <result column="FBTYPE" property="fbtype" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    FBID, FBPHONE, FBCONTENT, FBTYPE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.FeedBackExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.FEEDBACK
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.FEEDBACK
+    where FBID = #{fbid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.FEEDBACK
+    where FBID = #{fbid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.FeedBackExample" >
+    delete from LOVECUPID.FEEDBACK
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.FeedBack" >
+    <selectKey resultType="java.lang.Integer" keyProperty="fbid" order="BEFORE" >
+      select seq_feedback.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.FEEDBACK (FBID, FBPHONE, FBCONTENT, 
+      FBTYPE)
+    values (#{fbid,jdbcType=DECIMAL}, #{fbphone,jdbcType=DECIMAL}, #{fbcontent,jdbcType=VARCHAR}, 
+      #{fbtype,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.FeedBack" >
+    <selectKey resultType="java.lang.Integer" keyProperty="fbid" order="BEFORE" >
+      select seq_feedback.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.FEEDBACK
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      FBID,
+      <if test="fbphone != null" >
+        FBPHONE,
+      </if>
+      <if test="fbcontent != null" >
+        FBCONTENT,
+      </if>
+      <if test="fbtype != null" >
+        FBTYPE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{fbid,jdbcType=DECIMAL},
+      <if test="fbphone != null" >
+        #{fbphone,jdbcType=DECIMAL},
+      </if>
+      <if test="fbcontent != null" >
+        #{fbcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fbtype != null" >
+        #{fbtype,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.FeedBackExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.FEEDBACK
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.FEEDBACK
+    <set >
+      <if test="record.fbid != null" >
+        FBID = #{record.fbid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fbphone != null" >
+        FBPHONE = #{record.fbphone,jdbcType=DECIMAL},
+      </if>
+      <if test="record.fbcontent != null" >
+        FBCONTENT = #{record.fbcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fbtype != null" >
+        FBTYPE = #{record.fbtype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.FEEDBACK
+    set FBID = #{record.fbid,jdbcType=DECIMAL},
+      FBPHONE = #{record.fbphone,jdbcType=DECIMAL},
+      FBCONTENT = #{record.fbcontent,jdbcType=VARCHAR},
+      FBTYPE = #{record.fbtype,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.FeedBack" >
+    update LOVECUPID.FEEDBACK
+    <set >
+      <if test="fbphone != null" >
+        FBPHONE = #{fbphone,jdbcType=DECIMAL},
+      </if>
+      <if test="fbcontent != null" >
+        FBCONTENT = #{fbcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="fbtype != null" >
+        FBTYPE = #{fbtype,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FBID = #{fbid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.FeedBack" >
+    update LOVECUPID.FEEDBACK
+    set FBPHONE = #{fbphone,jdbcType=DECIMAL},
+      FBCONTENT = #{fbcontent,jdbcType=VARCHAR},
+      FBTYPE = #{fbtype,jdbcType=VARCHAR}
+    where FBID = #{fbid,jdbcType=DECIMAL}
+  </update>
+</mapper>

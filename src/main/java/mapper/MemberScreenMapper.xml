@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.MemberScreenMapper" >
+  <resultMap id="BaseResultMap" type="entity.MemberScreen" >
+    <id column="MSID" property="msid" jdbcType="DECIMAL" />
+    <result column="MSLOGINTIME" property="mslogintime" jdbcType="VARCHAR" />
+    <result column="MSHOUSE" property="mshouse" jdbcType="VARCHAR" />
+    <result column="MSCAR" property="mscar" jdbcType="VARCHAR" />
+    <result column="MSCONSTELLATION" property="msconstellation" jdbcType="VARCHAR" />
+    <result column="MSPROFESSION" property="msprofession" jdbcType="VARCHAR" />
+    <result column="MSNATION" property="msnation" jdbcType="VARCHAR" />
+    <result column="MSBIRTHPLACE" property="msbirthplace" jdbcType="VARCHAR" />
+    <result column="MSHAN" property="mshan" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    MSID, MSLOGINTIME, MSHOUSE, MSCAR, MSCONSTELLATION, MSPROFESSION, MSNATION, MSBIRTHPLACE, 
+    MSHAN
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.MemberScreenExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.MEMBERSCREEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.MEMBERSCREEN
+    where MSID = #{msid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.MEMBERSCREEN
+    where MSID = #{msid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.MemberScreenExample" >
+    delete from LOVECUPID.MEMBERSCREEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.MemberScreen" >
+    insert into LOVECUPID.MEMBERSCREEN (MSID, MSLOGINTIME, MSHOUSE, 
+      MSCAR, MSCONSTELLATION, MSPROFESSION, 
+      MSNATION, MSBIRTHPLACE, MSHAN
+      )
+    values (#{msid,jdbcType=DECIMAL}, #{mslogintime,jdbcType=VARCHAR}, #{mshouse,jdbcType=VARCHAR}, 
+      #{mscar,jdbcType=VARCHAR}, #{msconstellation,jdbcType=VARCHAR}, #{msprofession,jdbcType=VARCHAR}, 
+      #{msnation,jdbcType=VARCHAR}, #{msbirthplace,jdbcType=VARCHAR}, #{mshan,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.MemberScreen" >
+    insert into LOVECUPID.MEMBERSCREEN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="msid != null" >
+        MSID,
+      </if>
+      <if test="mslogintime != null" >
+        MSLOGINTIME,
+      </if>
+      <if test="mshouse != null" >
+        MSHOUSE,
+      </if>
+      <if test="mscar != null" >
+        MSCAR,
+      </if>
+      <if test="msconstellation != null" >
+        MSCONSTELLATION,
+      </if>
+      <if test="msprofession != null" >
+        MSPROFESSION,
+      </if>
+      <if test="msnation != null" >
+        MSNATION,
+      </if>
+      <if test="msbirthplace != null" >
+        MSBIRTHPLACE,
+      </if>
+      <if test="mshan != null" >
+        MSHAN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="msid != null" >
+        #{msid,jdbcType=DECIMAL},
+      </if>
+      <if test="mslogintime != null" >
+        #{mslogintime,jdbcType=VARCHAR},
+      </if>
+      <if test="mshouse != null" >
+        #{mshouse,jdbcType=VARCHAR},
+      </if>
+      <if test="mscar != null" >
+        #{mscar,jdbcType=VARCHAR},
+      </if>
+      <if test="msconstellation != null" >
+        #{msconstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="msprofession != null" >
+        #{msprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="msnation != null" >
+        #{msnation,jdbcType=VARCHAR},
+      </if>
+      <if test="msbirthplace != null" >
+        #{msbirthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="mshan != null" >
+        #{mshan,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.MemberScreenExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.MEMBERSCREEN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.MEMBERSCREEN
+    <set >
+      <if test="record.msid != null" >
+        MSID = #{record.msid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.mslogintime != null" >
+        MSLOGINTIME = #{record.mslogintime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mshouse != null" >
+        MSHOUSE = #{record.mshouse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mscar != null" >
+        MSCAR = #{record.mscar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.msconstellation != null" >
+        MSCONSTELLATION = #{record.msconstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.msprofession != null" >
+        MSPROFESSION = #{record.msprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="record.msnation != null" >
+        MSNATION = #{record.msnation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.msbirthplace != null" >
+        MSBIRTHPLACE = #{record.msbirthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mshan != null" >
+        MSHAN = #{record.mshan,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.MEMBERSCREEN
+    set MSID = #{record.msid,jdbcType=DECIMAL},
+      MSLOGINTIME = #{record.mslogintime,jdbcType=VARCHAR},
+      MSHOUSE = #{record.mshouse,jdbcType=VARCHAR},
+      MSCAR = #{record.mscar,jdbcType=VARCHAR},
+      MSCONSTELLATION = #{record.msconstellation,jdbcType=VARCHAR},
+      MSPROFESSION = #{record.msprofession,jdbcType=VARCHAR},
+      MSNATION = #{record.msnation,jdbcType=VARCHAR},
+      MSBIRTHPLACE = #{record.msbirthplace,jdbcType=VARCHAR},
+      MSHAN = #{record.mshan,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.MemberScreen" >
+    update LOVECUPID.MEMBERSCREEN
+    <set >
+      <if test="mslogintime != null" >
+        MSLOGINTIME = #{mslogintime,jdbcType=VARCHAR},
+      </if>
+      <if test="mshouse != null" >
+        MSHOUSE = #{mshouse,jdbcType=VARCHAR},
+      </if>
+      <if test="mscar != null" >
+        MSCAR = #{mscar,jdbcType=VARCHAR},
+      </if>
+      <if test="msconstellation != null" >
+        MSCONSTELLATION = #{msconstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="msprofession != null" >
+        MSPROFESSION = #{msprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="msnation != null" >
+        MSNATION = #{msnation,jdbcType=VARCHAR},
+      </if>
+      <if test="msbirthplace != null" >
+        MSBIRTHPLACE = #{msbirthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="mshan != null" >
+        MSHAN = #{mshan,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MSID = #{msid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.MemberScreen" >
+    update LOVECUPID.MEMBERSCREEN
+    set MSLOGINTIME = #{mslogintime,jdbcType=VARCHAR},
+      MSHOUSE = #{mshouse,jdbcType=VARCHAR},
+      MSCAR = #{mscar,jdbcType=VARCHAR},
+      MSCONSTELLATION = #{msconstellation,jdbcType=VARCHAR},
+      MSPROFESSION = #{msprofession,jdbcType=VARCHAR},
+      MSNATION = #{msnation,jdbcType=VARCHAR},
+      MSBIRTHPLACE = #{msbirthplace,jdbcType=VARCHAR},
+      MSHAN = #{mshan,jdbcType=VARCHAR}
+    where MSID = #{msid,jdbcType=DECIMAL}
+  </update>
+</mapper>

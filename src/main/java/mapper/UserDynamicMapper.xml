@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.UserDynamicMapper" >
+  <resultMap id="BaseResultMap" type="entity.UserDynamic" >
+    <id column="UDNID" property="udnid" jdbcType="DECIMAL" />
+    <result column="UDNTYPE" property="udntype" jdbcType="VARCHAR" />
+    <result column="UDNTOPIC" property="udntopic" jdbcType="VARCHAR" />
+    <result column="UDNCONTENT" property="udncontent" jdbcType="VARCHAR" />
+    <result column="UDNPHOTO" property="udnphoto" jdbcType="VARCHAR" />
+    <result column="UBID" property="ubid" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    UDNID, UDNTYPE, UDNTOPIC, UDNCONTENT, UDNPHOTO, UBID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.UserDynamicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERDYNAMIC
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERDYNAMIC
+    where UDNID = #{udnid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.USERDYNAMIC
+    where UDNID = #{udnid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.UserDynamicExample" >
+    delete from LOVECUPID.USERDYNAMIC
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.UserDynamic" >
+    <selectKey resultType="java.lang.Integer" keyProperty="udnid" order="BEFORE" >
+      select seq_userdynamic.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.USERDYNAMIC (UDNID, UDNTYPE, UDNTOPIC, 
+      UDNCONTENT, UDNPHOTO, UBID
+      )
+    values (#{udnid,jdbcType=DECIMAL}, #{udntype,jdbcType=VARCHAR}, #{udntopic,jdbcType=VARCHAR}, 
+      #{udncontent,jdbcType=VARCHAR}, #{udnphoto,jdbcType=VARCHAR}, #{ubid,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.UserDynamic" >
+    <selectKey resultType="java.lang.Integer" keyProperty="udnid" order="BEFORE" >
+      select seq_userdynamic.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.USERDYNAMIC
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      UDNID,
+      <if test="udntype != null" >
+        UDNTYPE,
+      </if>
+      <if test="udntopic != null" >
+        UDNTOPIC,
+      </if>
+      <if test="udncontent != null" >
+        UDNCONTENT,
+      </if>
+      <if test="udnphoto != null" >
+        UDNPHOTO,
+      </if>
+      <if test="ubid != null" >
+        UBID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{udnid,jdbcType=DECIMAL},
+      <if test="udntype != null" >
+        #{udntype,jdbcType=VARCHAR},
+      </if>
+      <if test="udntopic != null" >
+        #{udntopic,jdbcType=VARCHAR},
+      </if>
+      <if test="udncontent != null" >
+        #{udncontent,jdbcType=VARCHAR},
+      </if>
+      <if test="udnphoto != null" >
+        #{udnphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="ubid != null" >
+        #{ubid,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.UserDynamicExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.USERDYNAMIC
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.USERDYNAMIC
+    <set >
+      <if test="record.udnid != null" >
+        UDNID = #{record.udnid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.udntype != null" >
+        UDNTYPE = #{record.udntype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udntopic != null" >
+        UDNTOPIC = #{record.udntopic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udncontent != null" >
+        UDNCONTENT = #{record.udncontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udnphoto != null" >
+        UDNPHOTO = #{record.udnphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubid != null" >
+        UBID = #{record.ubid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.USERDYNAMIC
+    set UDNID = #{record.udnid,jdbcType=DECIMAL},
+      UDNTYPE = #{record.udntype,jdbcType=VARCHAR},
+      UDNTOPIC = #{record.udntopic,jdbcType=VARCHAR},
+      UDNCONTENT = #{record.udncontent,jdbcType=VARCHAR},
+      UDNPHOTO = #{record.udnphoto,jdbcType=VARCHAR},
+      UBID = #{record.ubid,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.UserDynamic" >
+    update LOVECUPID.USERDYNAMIC
+    <set >
+      <if test="udntype != null" >
+        UDNTYPE = #{udntype,jdbcType=VARCHAR},
+      </if>
+      <if test="udntopic != null" >
+        UDNTOPIC = #{udntopic,jdbcType=VARCHAR},
+      </if>
+      <if test="udncontent != null" >
+        UDNCONTENT = #{udncontent,jdbcType=VARCHAR},
+      </if>
+      <if test="udnphoto != null" >
+        UDNPHOTO = #{udnphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="ubid != null" >
+        UBID = #{ubid,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where UDNID = #{udnid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.UserDynamic" >
+    update LOVECUPID.USERDYNAMIC
+    set UDNTYPE = #{udntype,jdbcType=VARCHAR},
+      UDNTOPIC = #{udntopic,jdbcType=VARCHAR},
+      UDNCONTENT = #{udncontent,jdbcType=VARCHAR},
+      UDNPHOTO = #{udnphoto,jdbcType=VARCHAR},
+      UBID = #{ubid,jdbcType=DECIMAL}
+    where UDNID = #{udnid,jdbcType=DECIMAL}
+  </update>
+</mapper>

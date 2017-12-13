@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.PrivateLetterMapper" >
+  <resultMap id="BaseResultMap" type="entity.PrivateLetter" >
+    <id column="PLID" property="plid" jdbcType="DECIMAL" />
+    <result column="PLCONTENT" property="plcontent" jdbcType="VARCHAR" />
+    <result column="PLDATA" property="pldata" jdbcType="VARCHAR" />
+    <result column="PLSENDID" property="plsendid" jdbcType="DECIMAL" />
+    <result column="PLACCEPT" property="placcept" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PLID, PLCONTENT, PLDATA, PLSENDID, PLACCEPT
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.PrivateLetterExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.PRIVATELETTER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.PRIVATELETTER
+    where PLID = #{plid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.PRIVATELETTER
+    where PLID = #{plid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.PrivateLetterExample" >
+    delete from LOVECUPID.PRIVATELETTER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.PrivateLetter" >
+    <selectKey resultType="java.lang.Integer" keyProperty="plid" order="BEFORE" >
+      select seq_privateletter.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.PRIVATELETTER (PLID, PLCONTENT, PLDATA, 
+      PLSENDID, PLACCEPT)
+    values (#{plid,jdbcType=DECIMAL}, #{plcontent,jdbcType=VARCHAR}, #{pldata,jdbcType=VARCHAR}, 
+      #{plsendid,jdbcType=DECIMAL}, #{placcept,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.PrivateLetter" >
+    <selectKey resultType="java.lang.Integer" keyProperty="plid" order="BEFORE" >
+      select seq_privateletter.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.PRIVATELETTER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      PLID,
+      <if test="plcontent != null" >
+        PLCONTENT,
+      </if>
+      <if test="pldata != null" >
+        PLDATA,
+      </if>
+      <if test="plsendid != null" >
+        PLSENDID,
+      </if>
+      <if test="placcept != null" >
+        PLACCEPT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{plid,jdbcType=DECIMAL},
+      <if test="plcontent != null" >
+        #{plcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="pldata != null" >
+        #{pldata,jdbcType=VARCHAR},
+      </if>
+      <if test="plsendid != null" >
+        #{plsendid,jdbcType=DECIMAL},
+      </if>
+      <if test="placcept != null" >
+        #{placcept,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.PrivateLetterExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.PRIVATELETTER
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.PRIVATELETTER
+    <set >
+      <if test="record.plid != null" >
+        PLID = #{record.plid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.plcontent != null" >
+        PLCONTENT = #{record.plcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pldata != null" >
+        PLDATA = #{record.pldata,jdbcType=VARCHAR},
+      </if>
+      <if test="record.plsendid != null" >
+        PLSENDID = #{record.plsendid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.placcept != null" >
+        PLACCEPT = #{record.placcept,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.PRIVATELETTER
+    set PLID = #{record.plid,jdbcType=DECIMAL},
+      PLCONTENT = #{record.plcontent,jdbcType=VARCHAR},
+      PLDATA = #{record.pldata,jdbcType=VARCHAR},
+      PLSENDID = #{record.plsendid,jdbcType=DECIMAL},
+      PLACCEPT = #{record.placcept,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.PrivateLetter" >
+    update LOVECUPID.PRIVATELETTER
+    <set >
+      <if test="plcontent != null" >
+        PLCONTENT = #{plcontent,jdbcType=VARCHAR},
+      </if>
+      <if test="pldata != null" >
+        PLDATA = #{pldata,jdbcType=VARCHAR},
+      </if>
+      <if test="plsendid != null" >
+        PLSENDID = #{plsendid,jdbcType=DECIMAL},
+      </if>
+      <if test="placcept != null" >
+        PLACCEPT = #{placcept,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where PLID = #{plid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.PrivateLetter" >
+    update LOVECUPID.PRIVATELETTER
+    set PLCONTENT = #{plcontent,jdbcType=VARCHAR},
+      PLDATA = #{pldata,jdbcType=VARCHAR},
+      PLSENDID = #{plsendid,jdbcType=DECIMAL},
+      PLACCEPT = #{placcept,jdbcType=DECIMAL}
+    where PLID = #{plid,jdbcType=DECIMAL}
+  </update>
+</mapper>

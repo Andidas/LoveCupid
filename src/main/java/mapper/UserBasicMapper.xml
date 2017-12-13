@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.UserBasicMapper" >
+  <resultMap id="BaseResultMap" type="entity.UserBasic" >
+    <id column="UBID" property="ubid" jdbcType="DECIMAL" />
+    <result column="UBPHONE" property="ubphone" jdbcType="DECIMAL" />
+    <result column="UBEMAIL" property="ubemail" jdbcType="VARCHAR" />
+    <result column="UBPWD" property="ubpwd" jdbcType="VARCHAR" />
+    <result column="UBNAME" property="ubname" jdbcType="VARCHAR" />
+    <result column="UBSEX" property="ubsex" jdbcType="VARCHAR" />
+    <result column="UBBIRTH" property="ubbirth" jdbcType="VARCHAR" />
+    <result column="UBHEIGHT" property="ubheight" jdbcType="DECIMAL" />
+    <result column="UBDEGREE" property="ubdegree" jdbcType="VARCHAR" />
+    <result column="UBAPARTMENT" property="ubapartment" jdbcType="VARCHAR" />
+    <result column="UBSAL" property="ubsal" jdbcType="VARCHAR" />
+    <result column="UBRIGHT" property="ubright" jdbcType="VARCHAR" />
+    <result column="UBINTRODUCE" property="ubintroduce" jdbcType="VARCHAR" />
+    <result column="UBPHOTO" property="ubphoto" jdbcType="VARCHAR" />
+    <result column="UBIMGPHOTO" property="ubimgphoto" jdbcType="VARCHAR" />
+    <result column="UBHAN" property="ubhan" jdbcType="VARCHAR" />
+    <result column="UBLOOKFOR" property="ublookfor" jdbcType="VARCHAR" />
+    <result column="UBWEIGHT" property="ubweight" jdbcType="DECIMAL" />
+    <result column="UBSCHOOL" property="ubschool" jdbcType="VARCHAR" />
+    <result column="UBPROFESSION" property="ubprofession" jdbcType="VARCHAR" />
+    <result column="UBCOMPARRY" property="ubcomparry" jdbcType="VARCHAR" />
+    <result column="UBPOSITION" property="ubposition" jdbcType="VARCHAR" />
+    <result column="UBLASTLOGINTIME" property="ublastlogintime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    UBID, UBPHONE, UBEMAIL, UBPWD, UBNAME, UBSEX, UBBIRTH, UBHEIGHT, UBDEGREE, UBAPARTMENT, 
+    UBSAL, UBRIGHT, UBINTRODUCE, UBPHOTO, UBIMGPHOTO, UBHAN, UBLOOKFOR, UBWEIGHT, UBSCHOOL, 
+    UBPROFESSION, UBCOMPARRY, UBPOSITION, UBLASTLOGINTIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.UserBasicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERBASIC
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERBASIC
+    where UBID = #{ubid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.USERBASIC
+    where UBID = #{ubid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.UserBasicExample" >
+    delete from LOVECUPID.USERBASIC
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.UserBasic" >
+    <selectKey resultType="java.lang.Integer" keyProperty="ubid" order="BEFORE" >
+      select seq_userbasic.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.USERBASIC (UBID, UBPHONE, UBEMAIL, 
+      UBPWD, UBNAME, UBSEX, 
+      UBBIRTH, UBHEIGHT, UBDEGREE, 
+      UBAPARTMENT, UBSAL, UBRIGHT, 
+      UBINTRODUCE, UBPHOTO, UBIMGPHOTO, 
+      UBHAN, UBLOOKFOR, UBWEIGHT, 
+      UBSCHOOL, UBPROFESSION, UBCOMPARRY, 
+      UBPOSITION, UBLASTLOGINTIME)
+    values (#{ubid,jdbcType=DECIMAL}, #{ubphone,jdbcType=DECIMAL}, #{ubemail,jdbcType=VARCHAR}, 
+      #{ubpwd,jdbcType=VARCHAR}, #{ubname,jdbcType=VARCHAR}, #{ubsex,jdbcType=VARCHAR}, 
+      #{ubbirth,jdbcType=VARCHAR}, #{ubheight,jdbcType=DECIMAL}, #{ubdegree,jdbcType=VARCHAR}, 
+      #{ubapartment,jdbcType=VARCHAR}, #{ubsal,jdbcType=VARCHAR}, #{ubright,jdbcType=VARCHAR}, 
+      #{ubintroduce,jdbcType=VARCHAR}, #{ubphoto,jdbcType=VARCHAR}, #{ubimgphoto,jdbcType=VARCHAR}, 
+      #{ubhan,jdbcType=VARCHAR}, #{ublookfor,jdbcType=VARCHAR}, #{ubweight,jdbcType=DECIMAL}, 
+      #{ubschool,jdbcType=VARCHAR}, #{ubprofession,jdbcType=VARCHAR}, #{ubcomparry,jdbcType=VARCHAR}, 
+      #{ubposition,jdbcType=VARCHAR}, #{ublastlogintime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.UserBasic" >
+    <selectKey resultType="java.lang.Integer" keyProperty="ubid" order="BEFORE" >
+      select seq_userbasic.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.USERBASIC
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      UBID,
+      <if test="ubphone != null" >
+        UBPHONE,
+      </if>
+      <if test="ubemail != null" >
+        UBEMAIL,
+      </if>
+      <if test="ubpwd != null" >
+        UBPWD,
+      </if>
+      <if test="ubname != null" >
+        UBNAME,
+      </if>
+      <if test="ubsex != null" >
+        UBSEX,
+      </if>
+      <if test="ubbirth != null" >
+        UBBIRTH,
+      </if>
+      <if test="ubheight != null" >
+        UBHEIGHT,
+      </if>
+      <if test="ubdegree != null" >
+        UBDEGREE,
+      </if>
+      <if test="ubapartment != null" >
+        UBAPARTMENT,
+      </if>
+      <if test="ubsal != null" >
+        UBSAL,
+      </if>
+      <if test="ubright != null" >
+        UBRIGHT,
+      </if>
+      <if test="ubintroduce != null" >
+        UBINTRODUCE,
+      </if>
+      <if test="ubphoto != null" >
+        UBPHOTO,
+      </if>
+      <if test="ubimgphoto != null" >
+        UBIMGPHOTO,
+      </if>
+      <if test="ubhan != null" >
+        UBHAN,
+      </if>
+      <if test="ublookfor != null" >
+        UBLOOKFOR,
+      </if>
+      <if test="ubweight != null" >
+        UBWEIGHT,
+      </if>
+      <if test="ubschool != null" >
+        UBSCHOOL,
+      </if>
+      <if test="ubprofession != null" >
+        UBPROFESSION,
+      </if>
+      <if test="ubcomparry != null" >
+        UBCOMPARRY,
+      </if>
+      <if test="ubposition != null" >
+        UBPOSITION,
+      </if>
+      <if test="ublastlogintime != null" >
+        UBLASTLOGINTIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{ubid,jdbcType=DECIMAL},
+      <if test="ubphone != null" >
+        #{ubphone,jdbcType=DECIMAL},
+      </if>
+      <if test="ubemail != null" >
+        #{ubemail,jdbcType=VARCHAR},
+      </if>
+      <if test="ubpwd != null" >
+        #{ubpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="ubname != null" >
+        #{ubname,jdbcType=VARCHAR},
+      </if>
+      <if test="ubsex != null" >
+        #{ubsex,jdbcType=VARCHAR},
+      </if>
+      <if test="ubbirth != null" >
+        #{ubbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="ubheight != null" >
+        #{ubheight,jdbcType=DECIMAL},
+      </if>
+      <if test="ubdegree != null" >
+        #{ubdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="ubapartment != null" >
+        #{ubapartment,jdbcType=VARCHAR},
+      </if>
+      <if test="ubsal != null" >
+        #{ubsal,jdbcType=VARCHAR},
+      </if>
+      <if test="ubright != null" >
+        #{ubright,jdbcType=VARCHAR},
+      </if>
+      <if test="ubintroduce != null" >
+        #{ubintroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="ubphoto != null" >
+        #{ubphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="ubimgphoto != null" >
+        #{ubimgphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="ubhan != null" >
+        #{ubhan,jdbcType=VARCHAR},
+      </if>
+      <if test="ublookfor != null" >
+        #{ublookfor,jdbcType=VARCHAR},
+      </if>
+      <if test="ubweight != null" >
+        #{ubweight,jdbcType=DECIMAL},
+      </if>
+      <if test="ubschool != null" >
+        #{ubschool,jdbcType=VARCHAR},
+      </if>
+      <if test="ubprofession != null" >
+        #{ubprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="ubcomparry != null" >
+        #{ubcomparry,jdbcType=VARCHAR},
+      </if>
+      <if test="ubposition != null" >
+        #{ubposition,jdbcType=VARCHAR},
+      </if>
+      <if test="ublastlogintime != null" >
+        #{ublastlogintime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.UserBasicExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.USERBASIC
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.USERBASIC
+    <set >
+      <if test="record.ubid != null" >
+        UBID = #{record.ubid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ubphone != null" >
+        UBPHONE = #{record.ubphone,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ubemail != null" >
+        UBEMAIL = #{record.ubemail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubpwd != null" >
+        UBPWD = #{record.ubpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubname != null" >
+        UBNAME = #{record.ubname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubsex != null" >
+        UBSEX = #{record.ubsex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubbirth != null" >
+        UBBIRTH = #{record.ubbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubheight != null" >
+        UBHEIGHT = #{record.ubheight,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ubdegree != null" >
+        UBDEGREE = #{record.ubdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubapartment != null" >
+        UBAPARTMENT = #{record.ubapartment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubsal != null" >
+        UBSAL = #{record.ubsal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubright != null" >
+        UBRIGHT = #{record.ubright,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubintroduce != null" >
+        UBINTRODUCE = #{record.ubintroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubphoto != null" >
+        UBPHOTO = #{record.ubphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubimgphoto != null" >
+        UBIMGPHOTO = #{record.ubimgphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubhan != null" >
+        UBHAN = #{record.ubhan,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ublookfor != null" >
+        UBLOOKFOR = #{record.ublookfor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubweight != null" >
+        UBWEIGHT = #{record.ubweight,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ubschool != null" >
+        UBSCHOOL = #{record.ubschool,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubprofession != null" >
+        UBPROFESSION = #{record.ubprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubcomparry != null" >
+        UBCOMPARRY = #{record.ubcomparry,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ubposition != null" >
+        UBPOSITION = #{record.ubposition,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ublastlogintime != null" >
+        UBLASTLOGINTIME = #{record.ublastlogintime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.USERBASIC
+    set UBID = #{record.ubid,jdbcType=DECIMAL},
+      UBPHONE = #{record.ubphone,jdbcType=DECIMAL},
+      UBEMAIL = #{record.ubemail,jdbcType=VARCHAR},
+      UBPWD = #{record.ubpwd,jdbcType=VARCHAR},
+      UBNAME = #{record.ubname,jdbcType=VARCHAR},
+      UBSEX = #{record.ubsex,jdbcType=VARCHAR},
+      UBBIRTH = #{record.ubbirth,jdbcType=VARCHAR},
+      UBHEIGHT = #{record.ubheight,jdbcType=DECIMAL},
+      UBDEGREE = #{record.ubdegree,jdbcType=VARCHAR},
+      UBAPARTMENT = #{record.ubapartment,jdbcType=VARCHAR},
+      UBSAL = #{record.ubsal,jdbcType=VARCHAR},
+      UBRIGHT = #{record.ubright,jdbcType=VARCHAR},
+      UBINTRODUCE = #{record.ubintroduce,jdbcType=VARCHAR},
+      UBPHOTO = #{record.ubphoto,jdbcType=VARCHAR},
+      UBIMGPHOTO = #{record.ubimgphoto,jdbcType=VARCHAR},
+      UBHAN = #{record.ubhan,jdbcType=VARCHAR},
+      UBLOOKFOR = #{record.ublookfor,jdbcType=VARCHAR},
+      UBWEIGHT = #{record.ubweight,jdbcType=DECIMAL},
+      UBSCHOOL = #{record.ubschool,jdbcType=VARCHAR},
+      UBPROFESSION = #{record.ubprofession,jdbcType=VARCHAR},
+      UBCOMPARRY = #{record.ubcomparry,jdbcType=VARCHAR},
+      UBPOSITION = #{record.ubposition,jdbcType=VARCHAR},
+      UBLASTLOGINTIME = #{record.ublastlogintime,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.UserBasic" >
+    update LOVECUPID.USERBASIC
+    <set >
+      <if test="ubphone != null" >
+        UBPHONE = #{ubphone,jdbcType=DECIMAL},
+      </if>
+      <if test="ubemail != null" >
+        UBEMAIL = #{ubemail,jdbcType=VARCHAR},
+      </if>
+      <if test="ubpwd != null" >
+        UBPWD = #{ubpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="ubname != null" >
+        UBNAME = #{ubname,jdbcType=VARCHAR},
+      </if>
+      <if test="ubsex != null" >
+        UBSEX = #{ubsex,jdbcType=VARCHAR},
+      </if>
+      <if test="ubbirth != null" >
+        UBBIRTH = #{ubbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="ubheight != null" >
+        UBHEIGHT = #{ubheight,jdbcType=DECIMAL},
+      </if>
+      <if test="ubdegree != null" >
+        UBDEGREE = #{ubdegree,jdbcType=VARCHAR},
+      </if>
+      <if test="ubapartment != null" >
+        UBAPARTMENT = #{ubapartment,jdbcType=VARCHAR},
+      </if>
+      <if test="ubsal != null" >
+        UBSAL = #{ubsal,jdbcType=VARCHAR},
+      </if>
+      <if test="ubright != null" >
+        UBRIGHT = #{ubright,jdbcType=VARCHAR},
+      </if>
+      <if test="ubintroduce != null" >
+        UBINTRODUCE = #{ubintroduce,jdbcType=VARCHAR},
+      </if>
+      <if test="ubphoto != null" >
+        UBPHOTO = #{ubphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="ubimgphoto != null" >
+        UBIMGPHOTO = #{ubimgphoto,jdbcType=VARCHAR},
+      </if>
+      <if test="ubhan != null" >
+        UBHAN = #{ubhan,jdbcType=VARCHAR},
+      </if>
+      <if test="ublookfor != null" >
+        UBLOOKFOR = #{ublookfor,jdbcType=VARCHAR},
+      </if>
+      <if test="ubweight != null" >
+        UBWEIGHT = #{ubweight,jdbcType=DECIMAL},
+      </if>
+      <if test="ubschool != null" >
+        UBSCHOOL = #{ubschool,jdbcType=VARCHAR},
+      </if>
+      <if test="ubprofession != null" >
+        UBPROFESSION = #{ubprofession,jdbcType=VARCHAR},
+      </if>
+      <if test="ubcomparry != null" >
+        UBCOMPARRY = #{ubcomparry,jdbcType=VARCHAR},
+      </if>
+      <if test="ubposition != null" >
+        UBPOSITION = #{ubposition,jdbcType=VARCHAR},
+      </if>
+      <if test="ublastlogintime != null" >
+        UBLASTLOGINTIME = #{ublastlogintime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where UBID = #{ubid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.UserBasic" >
+    update LOVECUPID.USERBASIC
+    set UBPHONE = #{ubphone,jdbcType=DECIMAL},
+      UBEMAIL = #{ubemail,jdbcType=VARCHAR},
+      UBPWD = #{ubpwd,jdbcType=VARCHAR},
+      UBNAME = #{ubname,jdbcType=VARCHAR},
+      UBSEX = #{ubsex,jdbcType=VARCHAR},
+      UBBIRTH = #{ubbirth,jdbcType=VARCHAR},
+      UBHEIGHT = #{ubheight,jdbcType=DECIMAL},
+      UBDEGREE = #{ubdegree,jdbcType=VARCHAR},
+      UBAPARTMENT = #{ubapartment,jdbcType=VARCHAR},
+      UBSAL = #{ubsal,jdbcType=VARCHAR},
+      UBRIGHT = #{ubright,jdbcType=VARCHAR},
+      UBINTRODUCE = #{ubintroduce,jdbcType=VARCHAR},
+      UBPHOTO = #{ubphoto,jdbcType=VARCHAR},
+      UBIMGPHOTO = #{ubimgphoto,jdbcType=VARCHAR},
+      UBHAN = #{ubhan,jdbcType=VARCHAR},
+      UBLOOKFOR = #{ublookfor,jdbcType=VARCHAR},
+      UBWEIGHT = #{ubweight,jdbcType=DECIMAL},
+      UBSCHOOL = #{ubschool,jdbcType=VARCHAR},
+      UBPROFESSION = #{ubprofession,jdbcType=VARCHAR},
+      UBCOMPARRY = #{ubcomparry,jdbcType=VARCHAR},
+      UBPOSITION = #{ubposition,jdbcType=VARCHAR},
+      UBLASTLOGINTIME = #{ublastlogintime,jdbcType=VARCHAR}
+    where UBID = #{ubid,jdbcType=DECIMAL}
+  </update>
+</mapper>

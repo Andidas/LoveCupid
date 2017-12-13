@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.UserDetailMapper" >
+  <resultMap id="BaseResultMap" type="entity.UserDetail" >
+    <id column="UDID" property="udid" jdbcType="DECIMAL" />
+    <result column="UDHOUSEHOLD" property="udhousehold" jdbcType="VARCHAR" />
+    <result column="UDHOUSE" property="udhouse" jdbcType="VARCHAR" />
+    <result column="UDCAR" property="udcar" jdbcType="VARCHAR" />
+    <result column="UDNATION" property="udnation" jdbcType="VARCHAR" />
+    <result column="UDBIRTHPLACE" property="udbirthplace" jdbcType="VARCHAR" />
+    <result column="UDRANK" property="udrank" jdbcType="VARCHAR" />
+    <result column="UDCHILD" property="udchild" jdbcType="VARCHAR" />
+    <result column="UDCONSTELLATION" property="udconstellation" jdbcType="VARCHAR" />
+    <result column="UDBLOOD" property="udblood" jdbcType="VARCHAR" />
+    <result column="UDZODIAC" property="udzodiac" jdbcType="VARCHAR" />
+    <result column="UDFAITH" property="udfaith" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    UDID, UDHOUSEHOLD, UDHOUSE, UDCAR, UDNATION, UDBIRTHPLACE, UDRANK, UDCHILD, UDCONSTELLATION, 
+    UDBLOOD, UDZODIAC, UDFAITH
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.UserDetailExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERDETAIL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERDETAIL
+    where UDID = #{udid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.USERDETAIL
+    where UDID = #{udid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.UserDetailExample" >
+    delete from LOVECUPID.USERDETAIL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.UserDetail" >
+    insert into LOVECUPID.USERDETAIL (UDID, UDHOUSEHOLD, UDHOUSE, 
+      UDCAR, UDNATION, UDBIRTHPLACE, 
+      UDRANK, UDCHILD, UDCONSTELLATION, 
+      UDBLOOD, UDZODIAC, UDFAITH
+      )
+    values (#{udid,jdbcType=DECIMAL}, #{udhousehold,jdbcType=VARCHAR}, #{udhouse,jdbcType=VARCHAR}, 
+      #{udcar,jdbcType=VARCHAR}, #{udnation,jdbcType=VARCHAR}, #{udbirthplace,jdbcType=VARCHAR}, 
+      #{udrank,jdbcType=VARCHAR}, #{udchild,jdbcType=VARCHAR}, #{udconstellation,jdbcType=VARCHAR}, 
+      #{udblood,jdbcType=VARCHAR}, #{udzodiac,jdbcType=VARCHAR}, #{udfaith,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.UserDetail" >
+    insert into LOVECUPID.USERDETAIL
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="udid != null" >
+        UDID,
+      </if>
+      <if test="udhousehold != null" >
+        UDHOUSEHOLD,
+      </if>
+      <if test="udhouse != null" >
+        UDHOUSE,
+      </if>
+      <if test="udcar != null" >
+        UDCAR,
+      </if>
+      <if test="udnation != null" >
+        UDNATION,
+      </if>
+      <if test="udbirthplace != null" >
+        UDBIRTHPLACE,
+      </if>
+      <if test="udrank != null" >
+        UDRANK,
+      </if>
+      <if test="udchild != null" >
+        UDCHILD,
+      </if>
+      <if test="udconstellation != null" >
+        UDCONSTELLATION,
+      </if>
+      <if test="udblood != null" >
+        UDBLOOD,
+      </if>
+      <if test="udzodiac != null" >
+        UDZODIAC,
+      </if>
+      <if test="udfaith != null" >
+        UDFAITH,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="udid != null" >
+        #{udid,jdbcType=DECIMAL},
+      </if>
+      <if test="udhousehold != null" >
+        #{udhousehold,jdbcType=VARCHAR},
+      </if>
+      <if test="udhouse != null" >
+        #{udhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="udcar != null" >
+        #{udcar,jdbcType=VARCHAR},
+      </if>
+      <if test="udnation != null" >
+        #{udnation,jdbcType=VARCHAR},
+      </if>
+      <if test="udbirthplace != null" >
+        #{udbirthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="udrank != null" >
+        #{udrank,jdbcType=VARCHAR},
+      </if>
+      <if test="udchild != null" >
+        #{udchild,jdbcType=VARCHAR},
+      </if>
+      <if test="udconstellation != null" >
+        #{udconstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="udblood != null" >
+        #{udblood,jdbcType=VARCHAR},
+      </if>
+      <if test="udzodiac != null" >
+        #{udzodiac,jdbcType=VARCHAR},
+      </if>
+      <if test="udfaith != null" >
+        #{udfaith,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.UserDetailExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.USERDETAIL
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.USERDETAIL
+    <set >
+      <if test="record.udid != null" >
+        UDID = #{record.udid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.udhousehold != null" >
+        UDHOUSEHOLD = #{record.udhousehold,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udhouse != null" >
+        UDHOUSE = #{record.udhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udcar != null" >
+        UDCAR = #{record.udcar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udnation != null" >
+        UDNATION = #{record.udnation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udbirthplace != null" >
+        UDBIRTHPLACE = #{record.udbirthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udrank != null" >
+        UDRANK = #{record.udrank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udchild != null" >
+        UDCHILD = #{record.udchild,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udconstellation != null" >
+        UDCONSTELLATION = #{record.udconstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udblood != null" >
+        UDBLOOD = #{record.udblood,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udzodiac != null" >
+        UDZODIAC = #{record.udzodiac,jdbcType=VARCHAR},
+      </if>
+      <if test="record.udfaith != null" >
+        UDFAITH = #{record.udfaith,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.USERDETAIL
+    set UDID = #{record.udid,jdbcType=DECIMAL},
+      UDHOUSEHOLD = #{record.udhousehold,jdbcType=VARCHAR},
+      UDHOUSE = #{record.udhouse,jdbcType=VARCHAR},
+      UDCAR = #{record.udcar,jdbcType=VARCHAR},
+      UDNATION = #{record.udnation,jdbcType=VARCHAR},
+      UDBIRTHPLACE = #{record.udbirthplace,jdbcType=VARCHAR},
+      UDRANK = #{record.udrank,jdbcType=VARCHAR},
+      UDCHILD = #{record.udchild,jdbcType=VARCHAR},
+      UDCONSTELLATION = #{record.udconstellation,jdbcType=VARCHAR},
+      UDBLOOD = #{record.udblood,jdbcType=VARCHAR},
+      UDZODIAC = #{record.udzodiac,jdbcType=VARCHAR},
+      UDFAITH = #{record.udfaith,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.UserDetail" >
+    update LOVECUPID.USERDETAIL
+    <set >
+      <if test="udhousehold != null" >
+        UDHOUSEHOLD = #{udhousehold,jdbcType=VARCHAR},
+      </if>
+      <if test="udhouse != null" >
+        UDHOUSE = #{udhouse,jdbcType=VARCHAR},
+      </if>
+      <if test="udcar != null" >
+        UDCAR = #{udcar,jdbcType=VARCHAR},
+      </if>
+      <if test="udnation != null" >
+        UDNATION = #{udnation,jdbcType=VARCHAR},
+      </if>
+      <if test="udbirthplace != null" >
+        UDBIRTHPLACE = #{udbirthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="udrank != null" >
+        UDRANK = #{udrank,jdbcType=VARCHAR},
+      </if>
+      <if test="udchild != null" >
+        UDCHILD = #{udchild,jdbcType=VARCHAR},
+      </if>
+      <if test="udconstellation != null" >
+        UDCONSTELLATION = #{udconstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="udblood != null" >
+        UDBLOOD = #{udblood,jdbcType=VARCHAR},
+      </if>
+      <if test="udzodiac != null" >
+        UDZODIAC = #{udzodiac,jdbcType=VARCHAR},
+      </if>
+      <if test="udfaith != null" >
+        UDFAITH = #{udfaith,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where UDID = #{udid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.UserDetail" >
+    update LOVECUPID.USERDETAIL
+    set UDHOUSEHOLD = #{udhousehold,jdbcType=VARCHAR},
+      UDHOUSE = #{udhouse,jdbcType=VARCHAR},
+      UDCAR = #{udcar,jdbcType=VARCHAR},
+      UDNATION = #{udnation,jdbcType=VARCHAR},
+      UDBIRTHPLACE = #{udbirthplace,jdbcType=VARCHAR},
+      UDRANK = #{udrank,jdbcType=VARCHAR},
+      UDCHILD = #{udchild,jdbcType=VARCHAR},
+      UDCONSTELLATION = #{udconstellation,jdbcType=VARCHAR},
+      UDBLOOD = #{udblood,jdbcType=VARCHAR},
+      UDZODIAC = #{udzodiac,jdbcType=VARCHAR},
+      UDFAITH = #{udfaith,jdbcType=VARCHAR}
+    where UDID = #{udid,jdbcType=DECIMAL}
+  </update>
+</mapper>

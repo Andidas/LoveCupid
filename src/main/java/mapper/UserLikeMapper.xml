@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.UserLikeMapper" >
+  <resultMap id="BaseResultMap" type="entity.UserLike" >
+    <id column="ULID" property="ulid" jdbcType="DECIMAL" />
+    <result column="ULUBID" property="ulubid" jdbcType="DECIMAL" />
+    <result column="ULBYUBID" property="ulbyubid" jdbcType="DECIMAL" />
+    <result column="ULTIME" property="ultime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ULID, ULUBID, ULBYUBID, ULTIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.UserLikeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERLIKE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.USERLIKE
+    where ULID = #{ulid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.USERLIKE
+    where ULID = #{ulid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.UserLikeExample" >
+    delete from LOVECUPID.USERLIKE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.UserLike" >
+    <selectKey resultType="java.lang.Integer" keyProperty="ulid" order="BEFORE" >
+      select seq_userlike.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.USERLIKE (ULID, ULUBID, ULBYUBID, 
+      ULTIME)
+    values (#{ulid,jdbcType=DECIMAL}, #{ulubid,jdbcType=DECIMAL}, #{ulbyubid,jdbcType=DECIMAL}, 
+      #{ultime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.UserLike" >
+    <selectKey resultType="java.lang.Integer" keyProperty="ulid" order="BEFORE" >
+      select seq_userlike.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.USERLIKE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      ULID,
+      <if test="ulubid != null" >
+        ULUBID,
+      </if>
+      <if test="ulbyubid != null" >
+        ULBYUBID,
+      </if>
+      <if test="ultime != null" >
+        ULTIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{ulid,jdbcType=DECIMAL},
+      <if test="ulubid != null" >
+        #{ulubid,jdbcType=DECIMAL},
+      </if>
+      <if test="ulbyubid != null" >
+        #{ulbyubid,jdbcType=DECIMAL},
+      </if>
+      <if test="ultime != null" >
+        #{ultime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.UserLikeExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.USERLIKE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.USERLIKE
+    <set >
+      <if test="record.ulid != null" >
+        ULID = #{record.ulid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ulubid != null" >
+        ULUBID = #{record.ulubid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ulbyubid != null" >
+        ULBYUBID = #{record.ulbyubid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.ultime != null" >
+        ULTIME = #{record.ultime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.USERLIKE
+    set ULID = #{record.ulid,jdbcType=DECIMAL},
+      ULUBID = #{record.ulubid,jdbcType=DECIMAL},
+      ULBYUBID = #{record.ulbyubid,jdbcType=DECIMAL},
+      ULTIME = #{record.ultime,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.UserLike" >
+    update LOVECUPID.USERLIKE
+    <set >
+      <if test="ulubid != null" >
+        ULUBID = #{ulubid,jdbcType=DECIMAL},
+      </if>
+      <if test="ulbyubid != null" >
+        ULBYUBID = #{ulbyubid,jdbcType=DECIMAL},
+      </if>
+      <if test="ultime != null" >
+        ULTIME = #{ultime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ULID = #{ulid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.UserLike" >
+    update LOVECUPID.USERLIKE
+    set ULUBID = #{ulubid,jdbcType=DECIMAL},
+      ULBYUBID = #{ulbyubid,jdbcType=DECIMAL},
+      ULTIME = #{ultime,jdbcType=VARCHAR}
+    where ULID = #{ulid,jdbcType=DECIMAL}
+  </update>
+</mapper>

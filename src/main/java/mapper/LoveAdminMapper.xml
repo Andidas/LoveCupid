@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.LoveAdminMapper" >
+  <resultMap id="BaseResultMap" type="entity.LoveAdmin" >
+    <id column="ADMIN_ID" property="adminId" jdbcType="DECIMAL" />
+    <result column="ADMIN_EMAIL" property="adminEmail" jdbcType="VARCHAR" />
+    <result column="ADMIN_PASSWORD" property="adminPassword" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ADMIN_ID, ADMIN_EMAIL, ADMIN_PASSWORD
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.LoveAdminExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.LOVEADMIN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.LOVEADMIN
+    where ADMIN_ID = #{adminId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.LOVEADMIN
+    where ADMIN_ID = #{adminId,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.LoveAdminExample" >
+    delete from LOVECUPID.LOVEADMIN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.LoveAdmin" >
+    <selectKey resultType="java.lang.Integer" keyProperty="adminId" order="BEFORE" >
+      select seq_loveadmin.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.LOVEADMIN (ADMIN_ID, ADMIN_EMAIL, ADMIN_PASSWORD
+      )
+    values (#{adminId,jdbcType=DECIMAL}, #{adminEmail,jdbcType=VARCHAR}, #{adminPassword,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="entity.LoveAdmin" >
+    <selectKey resultType="java.lang.Integer" keyProperty="adminId" order="BEFORE" >
+      select seq_loveadmin.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.LOVEADMIN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      ADMIN_ID,
+      <if test="adminEmail != null" >
+        ADMIN_EMAIL,
+      </if>
+      <if test="adminPassword != null" >
+        ADMIN_PASSWORD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{adminId,jdbcType=DECIMAL},
+      <if test="adminEmail != null" >
+        #{adminEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPassword != null" >
+        #{adminPassword,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.LoveAdminExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.LOVEADMIN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.LOVEADMIN
+    <set >
+      <if test="record.adminId != null" >
+        ADMIN_ID = #{record.adminId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.adminEmail != null" >
+        ADMIN_EMAIL = #{record.adminEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminPassword != null" >
+        ADMIN_PASSWORD = #{record.adminPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.LOVEADMIN
+    set ADMIN_ID = #{record.adminId,jdbcType=DECIMAL},
+      ADMIN_EMAIL = #{record.adminEmail,jdbcType=VARCHAR},
+      ADMIN_PASSWORD = #{record.adminPassword,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.LoveAdmin" >
+    update LOVECUPID.LOVEADMIN
+    <set >
+      <if test="adminEmail != null" >
+        ADMIN_EMAIL = #{adminEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPassword != null" >
+        ADMIN_PASSWORD = #{adminPassword,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ADMIN_ID = #{adminId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.LoveAdmin" >
+    update LOVECUPID.LOVEADMIN
+    set ADMIN_EMAIL = #{adminEmail,jdbcType=VARCHAR},
+      ADMIN_PASSWORD = #{adminPassword,jdbcType=VARCHAR}
+    where ADMIN_ID = #{adminId,jdbcType=DECIMAL}
+  </update>
+</mapper>

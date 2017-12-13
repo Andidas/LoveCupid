@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.SelfNominationMapper" >
+  <resultMap id="BaseResultMap" type="entity.SelfNomination" >
+    <id column="SNID" property="snid" jdbcType="DECIMAL" />
+    <result column="SNSEX" property="snsex" jdbcType="VARCHAR" />
+    <result column="SNSELF" property="snself" jdbcType="VARCHAR" />
+    <result column="SNREQUIRED" property="snrequired" jdbcType="VARCHAR" />
+    <result column="SNPHOTO" property="snphoto" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    SNID, SNSEX, SNSELF, SNREQUIRED, SNPHOTO
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="entity.SelfNominationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from LOVECUPID.SELFNOMINATION
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LOVECUPID.SELFNOMINATION
+    where SNID = #{snid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LOVECUPID.SELFNOMINATION
+    where SNID = #{snid,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="entity.SelfNominationExample" >
+    delete from LOVECUPID.SELFNOMINATION
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="entity.SelfNomination" >
+    <selectKey resultType="java.lang.Integer" keyProperty="snid" order="BEFORE" >
+      select seq_selfnomination.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.SELFNOMINATION (SNID, SNSEX, SNSELF, 
+      SNREQUIRED, SNPHOTO)
+    values (#{snid,jdbcType=DECIMAL}, #{snsex,jdbcType=VARCHAR}, #{snself,jdbcType=VARCHAR}, 
+      #{snrequired,jdbcType=VARCHAR}, #{snphoto,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="entity.SelfNomination" >
+    <selectKey resultType="java.lang.Integer" keyProperty="snid" order="BEFORE" >
+      select seq_selfnomination.nextval from dual
+    </selectKey>
+    insert into LOVECUPID.SELFNOMINATION
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      SNID,
+      <if test="snsex != null" >
+        SNSEX,
+      </if>
+      <if test="snself != null" >
+        SNSELF,
+      </if>
+      <if test="snrequired != null" >
+        SNREQUIRED,
+      </if>
+      <if test="snphoto != null" >
+        SNPHOTO,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      #{snid,jdbcType=DECIMAL},
+      <if test="snsex != null" >
+        #{snsex,jdbcType=VARCHAR},
+      </if>
+      <if test="snself != null" >
+        #{snself,jdbcType=VARCHAR},
+      </if>
+      <if test="snrequired != null" >
+        #{snrequired,jdbcType=VARCHAR},
+      </if>
+      <if test="snphoto != null" >
+        #{snphoto,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="entity.SelfNominationExample" resultType="java.lang.Integer" >
+    select count(*) from LOVECUPID.SELFNOMINATION
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update LOVECUPID.SELFNOMINATION
+    <set >
+      <if test="record.snid != null" >
+        SNID = #{record.snid,jdbcType=DECIMAL},
+      </if>
+      <if test="record.snsex != null" >
+        SNSEX = #{record.snsex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.snself != null" >
+        SNSELF = #{record.snself,jdbcType=VARCHAR},
+      </if>
+      <if test="record.snrequired != null" >
+        SNREQUIRED = #{record.snrequired,jdbcType=VARCHAR},
+      </if>
+      <if test="record.snphoto != null" >
+        SNPHOTO = #{record.snphoto,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update LOVECUPID.SELFNOMINATION
+    set SNID = #{record.snid,jdbcType=DECIMAL},
+      SNSEX = #{record.snsex,jdbcType=VARCHAR},
+      SNSELF = #{record.snself,jdbcType=VARCHAR},
+      SNREQUIRED = #{record.snrequired,jdbcType=VARCHAR},
+      SNPHOTO = #{record.snphoto,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="entity.SelfNomination" >
+    update LOVECUPID.SELFNOMINATION
+    <set >
+      <if test="snsex != null" >
+        SNSEX = #{snsex,jdbcType=VARCHAR},
+      </if>
+      <if test="snself != null" >
+        SNSELF = #{snself,jdbcType=VARCHAR},
+      </if>
+      <if test="snrequired != null" >
+        SNREQUIRED = #{snrequired,jdbcType=VARCHAR},
+      </if>
+      <if test="snphoto != null" >
+        SNPHOTO = #{snphoto,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where SNID = #{snid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="entity.SelfNomination" >
+    update LOVECUPID.SELFNOMINATION
+    set SNSEX = #{snsex,jdbcType=VARCHAR},
+      SNSELF = #{snself,jdbcType=VARCHAR},
+      SNREQUIRED = #{snrequired,jdbcType=VARCHAR},
+      SNPHOTO = #{snphoto,jdbcType=VARCHAR}
+    where SNID = #{snid,jdbcType=DECIMAL}
+  </update>
+</mapper>
