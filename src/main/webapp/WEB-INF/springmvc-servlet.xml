@@ -18,9 +18,9 @@
 	<!-- mybatis配置 连接池 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl"></property>
-		<property name="username" value="scott"></property>
-		<property name="password" value="oracle"></property>
+		<property name="url" value="jdbc:oracle:thin:@192.168.103.28:1521:orcl"></property>
+		<property name="username" value="loveCupid"></property>
+		<property name="password" value="love123"></property>
 	</bean>
 	<!-- mybatis基本配置 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
