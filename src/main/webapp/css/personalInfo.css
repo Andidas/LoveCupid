@@ -1,0 +1,81 @@
+#title{
+	position:relative;
+	height: 150px;
+}
+#title .looking{
+	color:#7F97B4;
+}
+#title h1{
+	position:absolute;
+	top:100px;
+	font-weight: bolder;
+	font-size: 24px; 
+}
+#title h1 span{
+	color:#999;
+	font-size: 14px;
+	font-weight: normal;
+}
+#title h1 span em{
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	background: url(../images/time.png) 0px 4px;;
+}
+.p_underline{	
+	height: 5px;
+	background:black;
+	margin-bottom: 2px;
+}
+#content{
+	border-top: 1px solid black;
+}
+#content p{
+	margin: 40px 0px;
+}
+#content .visit{
+	display:inline-block;
+	background-color:#FF3333;
+	color:#fff;
+	font-size: 14px;
+	line-height: 30px;
+	height: 30px;
+	padding: 0 21px;
+}
+#content .share{
+	position: absolute;
+	right:50px;
+}
+
+#content .share b{
+	margin:0px 5px;
+	position:relative;
+	top:5px;
+	display:inline-block;
+	width: 21px;
+	height: 21px;
+	background: url(../images/softIcon.png);
+	transition:all 0.3s;
+
+
+}
+#content .share b:nth-of-type(1){
+ 	background-position: 0px -169px; 
+
+}
+#content .share b:nth-of-type(2){
+	 background-position: 0px -249px; 
+
+}
+#content .share b:nth-of-type(3){
+ 	background-position: 0px -289px; 
+
+}
+#content .share b:nth-of-type(4){
+ 	background-position: 0px -429px; 
+}
+
+#content .share b:nth-of-type(5){
+ 	background-position: 0px -389px; 
+	
+}

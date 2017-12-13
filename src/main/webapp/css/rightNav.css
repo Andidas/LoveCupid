@@ -1,0 +1,204 @@
+#rightNav{
+/* 	border: 1px solid blue; */
+	
+}
+#rightNav .top{
+	height:130px;
+	position: relative;
+	border-bottom: 1px solid #CDCDCD;
+}
+#rightNav #uploadPhoto{
+	line-height:20px;
+	text-align:center;
+	font-size:14px;
+	color:#fff;
+	position:absolute;
+	width: 70px;
+	height: 70px;
+	background:#CDCDCD;
+}
+#rightNav #username{
+	position: absolute;
+	top:0px;
+	left:80px;
+	font-weight: bolder;
+	font-size: 18px;
+}
+#rightNav #username+b{
+	position: absolute;
+	top:0px;
+	left:140px;
+	width: 20px;
+	height: 20px;
+	background: url(../images/nvip.png) -4px 0px;
+}
+#rightNav #love,#rightNav #loved{
+	color:black;
+	width:100px;
+	height:30px;
+	position: absolute;
+	top:100px;
+	left:30px;
+	text-decoration: none;
+	
+}
+#rightNav #love{
+	border-right: 1px solid #CDCDCD;
+}
+#rightNav #loved{
+	padding-left:20px;
+	left:130px;
+	border-left: 1px solid #CDCDCD;
+
+}
+/*信用等级*/
+#rightNav #lever{
+	font-size:14px;
+	line-height:20px;
+	text-align:center;
+	width:50px;
+	height:20px; 
+	padding:1px;
+	position: absolute;
+	top:23px;
+	left:80px;
+	background:#93acca;
+	color: white;
+	border-radius:10px;	
+}
+#rightNav #lever+div{
+	position: absolute;
+	top:48px;
+	left:80px;
+	width:180px;
+}
+#rightNav #lever+div b{
+	margin:1px;
+	float:left;
+	width: 23px;
+	height: 23px;
+}
+#rightNav #lever+div b:nth-of-type(1){
+	background:url(../images/icon.png) 0px -128px;
+}
+#rightNav #lever+div b:nth-of-type(2){
+	background:url(../images/icon.png) -24px -128px;
+}
+#rightNav #lever+div b:nth-of-type(3){
+	background:url(../images/icon.png) -146px -128px;
+}
+#rightNav #lever+div b:nth-of-type(4){
+	background:url(../images/icon.png) -247px -128px;
+}
+#rightNav #lever+div b:nth-of-type(5){
+	background:url(../images/icon.png) -222px -128px;
+}
+#rightNav #lever+div b:nth-of-type(6){
+	background:url(../images/icon.png) -196px -128px;
+}
+#rightNav #lever+div b:nth-of-type(7){
+	background:url(../images/icon.png) -172px -128px;
+}
+/*中间部分*/
+#rightNav .center{
+	height:550px;
+	position: relative;
+}
+
+#rightNav .center .openVIP{
+	left:30px;
+	top:30px;
+	font-weight:bold;
+	font-size:14px;
+	text-align:center;
+	line-height:30px;
+	display:inline-block;
+	height: 30px;
+	width: 200px;
+	background:#eb5441;
+	color: white;
+	position: relative;
+}
+#rightNav .center .openVIP b{
+	position:absolute;
+	left:50px;
+	top:3px;
+	width:20px;
+	height:25px;
+	background:url(../images/icon.png) -203px -470px;
+	background-color: transparent;
+}
+#rightNav .center .openVIP:hover{
+	cursor:pointer;
+	text-decoration:none;
+ 	background:#ff7d6c; 
+}
+#rightNav .dynamic,.characterLove{
+	position: absolute;
+	width: 45px;
+	height: 38px;
+	top:80px;
+}
+#rightNav .dynamic{
+	background:url(../images/icon1.png) 0px 0px;
+	left:48px;
+}
+#rightNav .dynamic+span{
+	position: absolute;
+	top:120px;
+	left:40px;
+	font-size: 14px;
+}
+#rightNav .characterLove{
+	background:url(../images/icon1.png) -42px 0px;
+	left:148px;	
+}
+#rightNav .characterLove+span{
+	position: absolute;
+	top:120px;
+	left:140px;
+	font-size: 14px;
+}
+#rightNav .happyEvent{
+	position: absolute;
+	top:150px;
+}
+#rightNav .happyEvent a:nth-of-type(1){
+	color:#333;
+	font-size:14px;
+	font-weight:bold;
+	float: left;
+	margin: 20px 0px;
+}
+#rightNav .happyEvent a:nth-of-type(2){
+	margin: 20px 0px;
+	font-size:14px;
+	color:#333;
+	float: right;
+}
+#rightNav .happyEvent img{
+	margin-left: 15px;
+}
+#rightNav .center p{
+	position:relative;
+	font-size: 14px;
+	padding-left: 20px;
+	margin: 15px;
+}
+#rightNav .center p b{
+	position: absolute;
+	left:0px;
+	top:0px;
+	width: 20px;
+	height: 20px;
+	background:url(../images/icon.png) -126px -368px;
+}
+#rightNav .bottom h3{
+	font-size: 14px;
+	font-weight: bold;
+	margin: 10px;
+}
+#rightNav .bottom p{
+	font-size:14px;
+	margin:10px; 
+}
