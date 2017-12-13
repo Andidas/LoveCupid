@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>trend</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/style1.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		/*function modify() {
+									var modify = document.getElementById("modify");
+									var top = modify.offsetTop - 55 + "px";
+									modify.style.top = top;
+
+								}
+
+								function modifyBack() {
+									var modify = document.getElementById("modify");
+									var top = modify.offsetTop + 55 + "px";
+									modify.style.top = top;
+
+								}*/
+
+		/*function change(){
+			var t;
+			var modify = document.getElementById("all_agree_1");
+			var sum = document.getElementById("num");
+			t=parseInt(sum.value)+1;
+			alert(parseInt(sum.value))
+			sum.innerHTML=t;
+			 modify.css(" background-position","-42px -371px");
+			
+		}*/
+		$(function() {
+			var t;
+			var a = 0;
+			$("#change").click(function() {
+				a++;
+				if (a < 2) {
+					t = parseInt($("#num").text()) + 1;
+					$("#num").text(t);
+					$(".all_agree_1").css("background-position", "-42px -371px");
+				}
+			});
+
+			$(".trend-filter-modify").click(function() {
+				$("#modify").animate({
+					top: "-55px"
+				}, "slow");
+			});
+
+			$(".text-dark-gray").click(function() {
+				$("#modify").animate({
+					top: "0px"
+				}, "slow");
+			});
+
+			$("#hid").click(function() {
+				$(".poplayer").css("visibility", "visible");
+				$(".masklayer").css("visibility", "visible");
+
+			});
+
+			$(".icon-close").click(function() {
+				$(".poplayer").css("visibility", "hidden");
+				$(".masklayer").css("visibility", "hidden");
+
+			});
+		});
+	</script>
+
+	<body>
+		<div class="T_container">
+			<div class="topic">
+				<div id="chat"><span>大家都在聊：</span></div>
+				<div id="tag_1">
+					<p>
+						<a href="#" class="tag">#我家主子#</a>
+						<a href="#" class="tag">#世界很精彩#</a>
+						<a href="#" class="tag">#致各种花田骗子#</a>
+						<a href="#" class="tag">#你好旧时光#</a>
+						<a href="#" class="tag">#我是单身汪#</a>
+						<a href="#" class="tag">#单身求解放#</a>
+						<a href="#" class="tag">#挚爱梵高#</a>
+						<a href="#" class="tag">#起来嗨#</a></p>
+					</p>
+				</div>
+			</div>
+			<div id="trendFilter" class="trend-filter" style="height:58px;">
+				<em class="icon-filter-coner"></em>
+				<div class="trend-filter-inner" style="top: 0px;" id="modify">
+
+					<div class="trend-filter-title">
+						<a class="trend-filter-modify" title="修改交友要求" href="javascript:;"></a>
+						<span id="homeFilterParams" class="trend-filter-title-text" data-province="4" data-city="0" data-age="18-22" data-height="0-0" data-education="1-1" data-salary-require="0-0">
+            我正在看：
+            <span class="js-province-text">重庆</span>
+						<span class="js-city-text"></span>，
+						<span class="js-age-text">18到22岁</span>
+						<span class="js-height-area" style="display: none;">，
+               <em class="js-height-text">不限</em>
+            </span>
+						<span class="js-education-area" style="display: none;">，
+               <em class="js-education-text"></em>
+            </span>
+						<span class="js-salary-area" style="display: none;">，
+               <em class="js-salary-text">不限月收入</em>
+            </span>
+						<span>的女生</span>
+						</span>
+					</div>
+					<div class="trend-filter-search ">
+						<label class="fL">筛选：</label>
+						<div class="fL">
+							<div>
+								<select class="feed-filter-province" data-selected="4">
+									<option value="0">不限</option>
+									<option value="1">北京</option>
+									<option value="2">上海</option>
+									<option value="3">天津</option>
+									<option value="4" selected="">重庆</option>
+									<option value="5">浙江</option>
+									<option value="6">江苏</option>
+									<option value="7">广东</option>
+									<option value="8">福建</option>
+									<option value="9">湖南</option>
+									<option value="10">湖北</option>
+									<option value="11">辽宁</option>
+									<option value="12">吉林</option>
+									<option value="13">黑龙江</option>
+									<option value="14">河北</option>
+									<option value="15">河南</option>
+									<option value="16">山东</option>
+									<option value="17">陕西</option>
+									<option value="18">甘肃</option>
+									<option value="19">青海</option>
+									<option value="20">新疆</option>
+									<option value="21">山西</option>
+									<option value="22">四川</option>
+									<option value="23">贵州</option>
+									<option value="24">安徽</option>
+									<option value="25">江西</option>
+									<option value="26">云南</option>
+									<option value="27">内蒙古</option>
+									<option value="28">广西</option>
+									<option value="29">西藏</option>
+									option value="30">宁夏</option>
+									<option value="31">海南</option>
+									<option value="32">香港</option>
+									<option value="33">澳门</option>
+									<option value="34">台湾</option>
+									<option value="35">海外</option>
+									<option value="36">其他地区</option>
+								</select>
+								<select class="feed-filter-city" data-selected="0" disabled="disabled">
+									<option value="0">不限</option>
+								</select>
+								<select class="feed-filter-age-start" data-selected="18">
+									<option value="18" selected="">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+								</select>-
+								<select class="feed-filter-age-end" data-selected="22">
+									<option value="0">不限</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22" selected="">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+									<option value="25">25</option>
+									<option value="26">26</option>
+									<option value="27">27</option>
+									<option value="28">28</option>
+									<option value="29">29</option>
+									<option value="30">30</option>
+									<option value="31">31</option>
+									<option value="32">32</option>
+									<option value="33">33</option>
+									<option value="34">34</option>
+									<option value="35">35</option>
+									<option value="36">36</option>
+									<option value="37">37</option>
+									<option value="38">38</option>
+									<option value="39">39</option>
+									<option value="40">40</option>
+									<option value="41">41</option>
+									<option value="42">42</option>
+									<option value="43">43</option>
+									<option value="44">44</option>
+									<option value="45">45</option>
+									<option value="46">46</option>
+									<option value="47">47</option>
+									<option value="48">48</option>
+									<option value="49">49</option>
+									<option value="50">50</option>
+									<option value="51">51</option>
+									<option value="52">52</option>
+									<option value="53">53</option>
+									<option value="54">54</option>
+									<option value="55">55</option>
+									<option value="56">56</option>
+									<option value="57">57</option>
+									<option value="58">58</option>
+									<option value="59">59</option>
+									<option value="60">60</option>
+									</select>岁
+								<select class="feed-filter-height-start" data-selected="0"><option value="0">不限</option><option value="150">150</option><option value="151">151</option><option value="152">152</option><option value="153">153</option><option value="154">154</option><option value="155">155</option><option value="156">156</option><option value="157">157</option><option value="158">158</option><option value="159">159</option><option value="160">160</option><option value="161">161</option><option value="162">162</option><option value="163">163</option><option value="164">164</option><option value="165">165</option><option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value="171">171</option><option value="172">172</option><option value="173">173</option><option value="174">174</option><option value="175">175</option><option value="176">176</option><option value="177">177</option><option value="178">178</option><option value="179">179</option><option value="180">180</option><option value="181">181</option><option value="182">182</option><option value="183">183</option><option value="184">184</option><option value="185">185</option><option value="186">186</option><option value="187">187</option><option value="188">188</option><option value="189">189</option><option value="190">190</option><option value="191">191</option><option value="192">192</option><option value="193">193</option><option value="194">194</option><option value="195">195</option><option value="196">196</option><option value="197">197</option><option value="198">198</option><option value="199">199</option><option value="200">200</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option><option value="205">205</option><option value="206">206</option><option value="207">207</option><option value="208">208</option><option value="209">209</option><option value="210">210</option></select>-
+								<select class="feed-filter-height-end" data-selected="0">
+										<option value="0">不限</option>
+										<option value="150">150</option>
+										<option value="151">151</option>
+										<option value="152">152</option>
+										<option value="153">153</option>
+										<option value="154">154</option>
+										<option value="155">155</option>
+										<option value="156">156</option>
+										<option value="157">157</option>
+										<option value="158">158</option>
+										<option value="159">159</option>
+										<option value="160">160</option>
+										<option value="161">161</option>
+										<option value="162">162</option>
+										<option value="163">163</option>
+										<option value="164">164</option>
+										<option value="165">165</option>
+										<option value="166">166</option>
+										<option value="167">167</option>
+										<option value="168">168</option>
+										<option value="169">169</option>
+										<option value="170">170</option>
+										<option value="171">171</option>
+										<option value="172">172</option>
+										<option value="173">173</option>
+										<option value="174">174</option>
+										<option value="175">175</option>
+										<option value="176">176</option>
+										<option value="177">177</option>
+										<option value="178">178</option>
+										<option value="179">179</option>
+										<option value="180">180</option>
+										<option value="181">181</option>
+										<option value="182">182</option>
+										<option value="183">183</option>
+										<option value="184">184</option>
+										<option value="185">185</option>
+										<option value="186">186</option>
+										<option value="187">187</option>
+										<option value="188">188</option>
+										<option value="189">189</option>
+										<option value="190">190</option>
+										<option value="191">191</option>
+										<option value="192">192</option>
+										<option value="193">193</option>
+										<option value="194">194</option>
+										<option value="195">195</option>
+										<option value="196">196</option>
+										<option value="197">197</option>
+										<option value="198">198</option>
+										<option value="199">199</option>
+										<option value="200">200</option>
+										<option value="201">201</option>
+										<option value="202">202</option>
+										<option value="203">203</option>
+										<option value="204">204</option>
+										<option value="205">205</option>
+										<option value="206">206</option>
+										<option value="207">207</option>
+										<option value="208">208</option>
+										<option value="209">209</option>
+										<option value="210">210</option>
+										</select>厘米
+							</div>
+							<div style="padding-top: 2px;">
+								<select class="feed-filter-education" data-selected="0"><option value="0">请选择</option><option value="1">大专及以上</option><option value="2">本科及以上</option><option value="3">硕士及以上</option><option value="4">博士及以上</option></select>
+								<select class="feed-filter-salary-start" data-selected="0">
+									<option value="0">不限</option>
+									<option value="-1">2000</option>
+									<option value="1">4000</option>
+									<option value="2">6000</option>
+									<option value="3">10000</option>
+									<option value="4">20000</option>
+									<option value="5">50000</option>
+								</select> -
+								<select class="feed-filter-salary-end" data-selected="0">
+									<option value="0">不限</option>
+									<option value="-1">2000</option>
+									<option value="1">4000</option>
+									<option value="2">6000</option>
+									<option value="3">10000</option>
+									<option value="4">20000</option>
+									<option value="5">50000</option>
+									</select>&nbsp; 元月收入 &nbsp;&nbsp;的她 </div>
+						</div>
+						<div class="fR" style="width: 90px;">
+							<a class="trend-filter-btn" href="#">确定</a>
+							<a class="text-dark-gray" href="javascript:;">取消</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="img_top">
+				<div class="img_border_up"><img src="#" width="70px" height="70px" />
+					<div class="love">
+						<em class="icon-love"></em><a>喜欢</a>
+					</div>
+					<div class="love_1">
+						<em class="icon-love-1"></em><a>没兴趣</a>
+					</div>
+				</div>
+				<div class="T_user_box">
+					<div class="user_info"></div>
+
+					<div class="agree_user">
+						<div class="agree" id="change"><em class="all_agree_1" style="background-position: -64px -371px;"></em><span>+</span><span id="num">0</span></div>
+						<div class="agree" id="hid"><em class="all_agree"></em></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="poplayer" style="visibility: hidden;">
+			<div class="poplayer-main" style="top: 220px; left: 478.5px;">
+				<div class="poplayer-hd">
+					<a class="icon-close" title="关闭" href="javascript:;"></a>
+					<h3 class="js-title">发送私信</h3></div>
+				<div class="js-body">
+					<div class="poplayer-bd">
+						<p class="mess-tips-close" style="margin: -3px 0 5px -5px; padding-left: 8px;"><span>提醒：请选择熟悉的环境见面，不要和任何人产生金钱往来，以防被骗。</span></p>
+						<div class="poplayer-sendMessage-addressee"><a class="fR_t" target="_blank" href="">共1条对话</a><span class="text-gray">收件人：</span></div>
+						<div class="publish-bd">
+							<div class="publish-textarea"><textarea style="height: 58px;width: 100%; overflow-y: hidden;"></textarea>
+							</div>
+							<div class="publish-operate">
+								<div class="publish-insert"><em class="icon-face"></em></div>
+								<div class="publish-setTop"><label class="label-tag"><input class="js-setTop" type="checkbox">在她消息中心置顶(<a class="text-red" href="" target="_blank" data-log="dmUpOpen">开通高级VIP会员</a>免费使用)</label></div>
+							</div>
+						</div>
+					</div>
+					<div class="poplayer-ft">
+						<div class="publish-ft">
+							<div class="publish-btn">
+								<div class="js-btn-txt"><a class="btn" href="javascript:;">发送</a></div>
+							</div><span class="publish-count"><b class="char-constantia">400</b>个字</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="masklayer" style="z-index: 999; width: 100%; height: 100%;visibility: hidden;"></div>
+
+	</body>
+
+</html>

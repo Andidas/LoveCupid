@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Message</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script>
+			
+			
+			$(function(){
+			$("#next_a").click(function(){
+              $("#next_a").css({"color":"black","fontSize":"13px","fontWeight":"bold"});
+              $("#crruent_a").css({"color":"#ABABAB","fontSize":"12px","fontWeight":"normal"});
+              $(".tips").css("display","none");
+               $(".tips1").css("display","block");
+				});
+			$("#crruent_a").click(function(){
+			  $("#crruent_a").css({"color":"black","fontSize":"13px","fontWeight":"bold"});
+              $("#next_a").css({"color":"#ABABAB","fontSize":"12px","fontWeight":"normal"});
+			  $(".tips1").css("display","none");
+              $(".tips").css("display","block");
+			});
+				/*$(".link_all").click(function(){
+				$(".tips1").css("display","none");
+                $(".tips").css("display","block");	
+				});*/
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="M_container">
+			<div class="M_titleBar">
+				<h2>消息中心</h2>
+				<div id="searchForm" class="M_search">
+					<input class="M_search_form" type="text" maxlength="40" data-bindenter="1" autocomplete="off" placeholder="请输入关键词搜索私信">
+					<a class="search-form-btn" href="javascript:;"></a>
+				</div>
+			</div>
+			<div class="M_mainbox">
+				<div id="filterBox" class="filterBox">
+					<ul class="sub-tabBar">
+						<li class="current" data-type="0"><a id="crruent_a" href="#">全部</a></li>
+						<li class="line">|</li>
+						<li data-type="1" class="next"><a id="next_a" href="javascript:">未读</a></li>
+					</ul>
+					<a class="link_all" href="javascript:;">全部标记为已读</a>
+					<span class="fR">
+         <label class="label-tag"><input class="js-filter-match" autocomplete="off" type="checkbox">符合交友条件的用户</label>
+                   </span>
+				</div>
+              <div class="tips" style="display: block;">
+		    	<span class="noresult-tips-inner">
+		    	    <div class="noresult-tips-icon"></div>
+		    		<span class="js-text">暂无消息，资料越完善越容易收到私信哦</span>
+		    	</span>
+		    	
+		    </div>
+			  <div class="tips1" style="display: none">
+		    	<span class="noresult-tips-inner">
+		    	    <div class="noresult-tips-icon"></div>
+		    		<span class="js-text">暂无未读消息</span>
+		    	</span>
+		    	
+		    </div>
+			
+			</div>
+		</div>
+		<footer class="M_footer">
+			<div class="foot">
+				<a href="http://gb.corp.163.com/gb/about/overview.html" target="_blank">公司简介</a> - <a href="http://gb.corp.163.com/gb/contactus.html" target="_blank">联系方法</a> - <a href="http://corp.163.com/gb/job/job.html" target="_blank">招聘信息</a> - <a href="/protocol"
+					target="_blank">使用条款</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">花田动态</a> - <a href="//pub.love.163.com/special/sp/co-link.html" target="_blank">友情链接</a> - <a href="http://sitemap.163.com/" target="_blank">网站地图</a> -
+				<a href="javascript:;" class=" js-feedback ">花田意见反馈</a> - 增值电信业务经营许可证：<a class="" target="_blank" href="https://tsm.miit.gov.cn/pages/home.aspx">浙B1.B2-20090185</a> <br> 网易公司版权所有
+				<br>
+				<span>©1997-2017</span>
+			</div>
+		</footer>
+	</body>
+
+</html>
