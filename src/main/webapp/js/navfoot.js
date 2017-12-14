@@ -15,4 +15,8 @@ $(function() {
 			$(".footerNav").html(data);
 		}
 	});
+	//顶部导航的链接
+	$(".topNav #leftul li").click(function(){
+		
+	});
 });
