@@ -1,14 +1,18 @@
 $(function() {
-	$("#myli1").hover(function() {
-			$(this).find(".glyphicon").css("color", "black");
-		},
-		function() {
-			$(this).find(".glyphicon").css("color", "gainsboro");
-		});
-	$("#myli2").hover(function() {
-			$(this).find(".glyphicon").css("color", "black");
-		},
-		function() {
-			$(this).find(".glyphicon").css("color", "gainsboro");
-		});
+	/*顶部导航*/
+	$.ajax({
+		type:"post",
+		url:"/LoveCupid/topNav.htm",
+		success:function(data){
+			$(".topNav").html(data);
+		}
+	});
+	/*底部导航*/
+	$.ajax({
+		type:"post",
+		url:"/LoveCupid/footerNav.htm",
+		success:function(data){
+			$(".footerNav").html(data);
+		}
+	});
 });

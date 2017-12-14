@@ -41,6 +41,13 @@ body{
 	background: white;
 }
 
+#myli1:hover .glyphicon,#myli2:hover .glyphicon{
+	color:black !important;
+}
+#myli1 .glyphicon,#myli2 .glyphicon{
+	color:gainsboro;
+}
+ 
 .navbar-header a {
 	background: transparent url(../images/logo_v140801.png) no-repeat;
 	height: 38px;
@@ -100,4 +107,9 @@ body{
 
 .footer .cRed {
 	color: #BA2636;
+}
+.footerNav{
+	position: absolute;
+	width: 100%;
+	left:0px;
 }

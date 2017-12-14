@@ -46,6 +46,8 @@ $(function(){
 	$("#cancel").click(function(){
 		$("#queryCondition").css("height","0px");
 	});
+
+
 });
 
 

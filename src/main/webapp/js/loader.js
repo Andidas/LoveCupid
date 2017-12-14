@@ -8,6 +8,7 @@ function getRootPath(){
 }
 //jquery
 document.write('<script type="text/javascript" src="'+getRootPath()+'/js/jquery.min.js"></script>');
+
 //bootstrap
 document.write('<script type="text/javascript" src="'+getRootPath()+'/js/bootstrap.js"></script>');
 document.write('<link rel="stylesheet" href="'+getRootPath()+'/css/bootstrap.css" type="text/css"></link>');
@@ -23,4 +24,7 @@ document.write('<script type="text/javascript" src="'+getRootPath()+'/js/tip.js"
 //消息提示框
 document.write('<script type="text/javascript" src="'+getRootPath()+'/js/toastr.js"></script>');
 document.write('<link rel="stylesheet" href="'+getRootPath()+'/css/toastr.css" type="text/css"></link>');
+//顶部和底部导航
+document.write('<link rel="stylesheet" href="'+getRootPath()+'/css/navfoot.css" type="text/css"></link>');
+document.write('<script type="text/javascript" src="'+getRootPath()+'/js/navfoot.js"></script>');
 
