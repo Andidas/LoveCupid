@@ -6,7 +6,7 @@ body{
     font: 12px/1.75 Arial,sans-serif,\5b8b\4f53;
 }
 /*用户注册界面css*/
-.header{
+#dynamic .header{
 	background: transparent url(../images/navibg.png) repeat-x left top;
     width: 100%;
     position: fixed;
@@ -15,19 +15,19 @@ body{
     z-index: 950;
 	
 }
-.header_inner{
+#dynamic .header_inner{
 	margin: 0 auto;
     position: relative;
     height: 51px;
     width: 935px;
     z-index: 955;
 }
-.header_logo{
+#dynamic .header_logo{
 	left: 0;
     position: absolute;
     top: 6px;
 }
-.header_logo a{
+#dynamic .header_logo a{
 	background: transparent url(../images/logo_v140801.png) no-repeat top left;
     display: block;
     height: 38px;
@@ -36,7 +36,7 @@ body{
     width: 112px;
 
 }
-.header_title{
+#dynamic .header_title{
 	border-left: 1px solid #71767F;
     color: #AFB1B3;
     font: 24px/27px \5FAE\8F6F\96C5\9ED1,\9ED1\4F53;
@@ -47,34 +47,34 @@ body{
     top: 13px;
 }
 
-.container{
+#dynamic .container{
 	margin: 0 auto;
     padding-top: 78px;
     width: 935px;
 }
- .sign_up{
+ #dynamic .sign_up{
  	height: 82px;
     width: 935px;
     margin: 0 auto;
     position: relative;
     font-family: "\5FAE\8F6F\96C5\9ED1";
  }
-.sign_up h3{
+#dynamic .sign_up h3{
 	color: #8D8D8D;
     font-size: 18px;
     font-weight: 100;
 }
-.sign_up h2{
+#dynamic .sign_up h2{
 	color: #535353;
     font-size: 28px;
     font-weight: bold;
 }
-h1,h2,h3{
+#dynamic h1,h2,h3{
 	padding: 0;
 	margin: 0;
 }
 
-.sign_up_1{
+#dynamic .sign_up_1{
 	color: #5B5B5B;
     font-size: 14px;
     width: 265px;
@@ -83,37 +83,37 @@ h1,h2,h3{
     top: -30px;
     right: 0px;
 }
-.sign_bar{
+#dynamic .sign_bar{
 	height: 35px;
 }
-.bar_1{
+#dynamic .bar_1{
 	margin: 0 130px 0 52px;
 	width: 13px;
     height: 35px;
     background: #FFF;
     display: inline-block;
 }
-.bar_2{
+#dynamic .bar_2{
 	width: 13px;
     height: 35px;
     background: #FFF;
     display: inline-block;
 }
-.sign_content{
+#dynamic .sign_content{
 	background: #FFF;
     text-align: center;
     padding: 8px;
     top: 0;
 }
-.sign_content span{
+#dynamic .sign_content span{
 	font: bold 18px georgia;
     margin-right: 4px;	
 }
-p{
+#dynamic p{
 	padding: 0;
 	margin: 0;
 }
-.sign_menu{
+#dynamic .sign_menu{
 	background: url(../images/signup_menu.png) no-repeat 0 0;
     width: 937px;
     height: 70px;
@@ -121,21 +121,21 @@ p{
     position: relative;
 }
 
-#menu_1{
+#dynamic #menu_1{
 	color: #FFF;
     left: 273px;
     position: absolute;
     top: 22px;
     font-size: 16px;
 }
-#menu_2{
+#dynamic #menu_2{
 	color: #999;
     right: 196px;
 	position: absolute;
     top: 22px;
     font-size: 16px;
 }
-.main_box{
+#dynamic .main_box{
 	margin-top: 30px;
     border: 1px solid #D5D7DC;
     background: #FFF;
@@ -144,45 +144,45 @@ p{
 	float: right;
 }
 
-.form{
+#dynamic .form{
 	width: 858px;
     float: left;
     padding: 60px 0 75px 75px;
     font-size: 15px;
 
 }
-#form_sign{
+#dynamic #form_sign{
 	    color: #999;
 }
-.regsiterForm{
+#dynamic .regsiterForm{
 	width: 858px;
     float: left;
     padding: 0px 0 75px 0;
     font-size: 14px;
 }
-.reg_need{
+#dynamic .reg_need{
 	color: #F33;
     font: bold 14px/23px \5FAE\8F6F\96C5\9ED1,\9ED1\4F53;
     margin-right: 5px;
     vertical-align: middle;
 }
-.name_input{
+#dynamic .name_input{
 	width: 382px;
 	height: 25px;
 	margin-left: 15px;
 	margin-top: -20px;
 }
-.form_content{
+#dynamic .form_content{
 	margin-top:25px;
 }
-.all_content{
+#dynamic .all_content{
 	width: 382px;
 	margin-left: 95px;
 }
-label{
+#dynamic label{
 	float: left;
 }
-.select{
+#dynamic .select{
 	/*padding-bottom: 5px;*/
 	width: 122px;
 	height: 30px;
@@ -190,14 +190,14 @@ label{
 	margin-top:-10px;
 }
 
-.select_heigh{
+#dynamic .select_heigh{
     width: 382px;
 	height: 30px;
 	border: 1px solid #C7C7C7;
 	margin-left: 13px;
 	margin-top:-10px;
 }
-.select_pro{
+#dynamic .select_pro{
 	width: 184px;
 	height: 30px;
 	border: 1px solid #C7C7C7;
@@ -205,10 +205,10 @@ label{
 	margin-left: 11px;
 }
 
-.moble{
+#dynamic .moble{
 	margin-top: 390px;
 }
-.moble_line{
+#dynamic .moble_line{
 	border-top: #E5E5E5 solid 1px;
     color: #A9A9A9;
     font-size: 12px;
@@ -218,7 +218,7 @@ label{
     width: 471px;
     position: relative;
 }
-.moble_line span{
+#dynamic .moble_line span{
 	background: #FFF;
     left: 50%;
     margin-left: -126px;
@@ -226,7 +226,7 @@ label{
     position: absolute;
     top: -13px;
 }
-.photo_select{
+#dynamic .photo_select{
 	width: 154px;
 	height: 30px;
 	border: 1px solid #C7C7C7;
@@ -234,7 +234,7 @@ label{
 	margin-left: 11px;
 	
 }
-.phone_id{
+#dynamic .phone_id{
 	width: 154px;
 	height: 30px;
 	border: 1px solid #C7C7C7;
@@ -244,7 +244,7 @@ label{
 	text-align: center;
 	
 }
-.phone_id_1{
+#dynamic .phone_id_1{
 	width: 200px;
 	height: 30px;
 	border: 1px solid #C7C7C7;
@@ -252,7 +252,7 @@ label{
 	margin-left: 11px;
 }
 
-#gain_pass{
+#dynamic #gain_pass{
 	background: #C7C7C7;
     color: #A2A2A2;
     cursor: pointer;
@@ -263,11 +263,11 @@ label{
     width: 140px;
     text-align: center;
 }
-#agree{
+#dynamic #agree{
 	color: darkgray;
 	text-decoration: none;
 }
-.next_btn{
+#dynamic .next_btn{
 	width: 100px;
 	height: 40px;
 	line-height: 40px;
@@ -278,17 +278,17 @@ label{
 	
 }
 
-.next_btn:hover,.submit_btn:hover{
+#dynamic .next_btn:hover,.submit_btn:hover{
 	opacity: 0.6;
 	
 }
 
-#btn{
+#dynamic #btn{
 	text-decoration: none;
 	color: white;
 	display: block;
 }
-.main_box_1{
+#dynamic .main_box_1{
 	margin-top: 150px;
     border: 1px solid #D5D7DC;
     background: #FFF;
@@ -296,26 +296,26 @@ label{
 	position: absolute;
 	width: 935px;
 }
-.uploadAvatar-tips{
+#dynamic .uploadAvatar-tips{
 	padding: 13px 30px 13px 0;
     min-height: 85px;	
 }
-.text-gray{
+#dynamic .text-gray{
 	    color: #999;
 }
-.photo_border{
+#dynamic .photo_border{
 	border: 1px  dashed;
 	width: 200px;
 	height: 200px;
 	margin-left: 50px;
 }
-#upload{
+#dynamic #upload{
 	color: #4D97EF;
 	text-decoration: none;
 	font-size: 16px;
 	margin-left: 120px;
 }
-.submit_btn{
+#dynamic .submit_btn{
 	width: 100px;
 	height: 40px;
 	background: red;
@@ -327,21 +327,21 @@ label{
 	display: block;
 	cursor: pointer;
 }
-.sign_menu_2{
+#dynamic .sign_menu_2{
 	background: url(../images/signup_menu.png) no-repeat 0 -70px;
     width: 937px;
     height: 70px;
     margin-top: 40px;
     position: absolute;
 }
-#menu_1_1{
+#dynamic #menu_1_1{
 	color: darkgray;
     left: 273px;
     position: absolute;
     top: 22px;
     font-size: 16px;
 }
-#menu_2_1{
+#dynamic #menu_2_1{
 	color: white;
     right: 196px;
 	position: absolute;
@@ -349,33 +349,33 @@ label{
     font-size: 16px;
 }
 
-.footer{
+#dynamic .footer{
 	background: #E3E6EE;
     height: 21px;
     margin-top: 56px;
     position: absolute;
 }
 
-#warn{
+#dynamic #warn{
 position: absolute;	
 width: 20px;
 height: 20px;
 margin-left: 500px;
 margin-top: -23px;
 }
-#text,#text_day,#text_heigh,#text_sort,#text_phone{
+#dynamic #text,#text_day,#text_heigh,#text_sort,#text_phone{
 	margin-left: 40px;
 	color: red;
 	position: absolute;
 }
-#warn_day{
+#dynamic #warn_day{
 position: absolute;	
 width: 20px;
 height: 20px;
 margin-left: 390px;
 margin-top: -23px;
 }
-#warn_heigh{
+#dynamic #warn_heigh{
 position: absolute;	
 width: 20px;
 height: 20px;

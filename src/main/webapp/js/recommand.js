@@ -48,16 +48,6 @@ $(function(){
 	});
 	
 
-	//顶部导航链接设置红色下标
-	$(".topNav #leftul li").eq(0).addClass("on");
-	alert($(".topNav #leftul li").eq(0).prop("class"))
-/*	<ul class="nav navbar-nav navbar-left" id="leftul">
-					<li class=""><a href="/LoveCupid/recommand.htm">推荐</a></li>
-					<li class=""><a href="/LoveCupid/dynamic.htm">动态</a></li>
-					<li class=""><a href="/LoveCupid/meet.htm">遇见</a></li>
-					<li class=""><a href="/LoveCupid/accostSquare.htm">寻人启事</a></li>
-					<li class=""><a href="/LoveCupid/personal.htm">个人主页</a></li>
-				</ul>*/
 
 
 

@@ -63,10 +63,10 @@ public class NavController {
 	/**
 	 * 寻人启事
 	 */
-/*	@RequestMapping("/looking")
-	public String looking(){
-		return "looing";
-	}*/
+	@RequestMapping("/accostSquare")
+	public String accostSquare(){
+		return "accostSquare";
+	}
 	
 	/**
 	 * 个人主页
